@@ -1,0 +1,15 @@
+{
+    "name": "maturita",
+    "version": "1.0.0",
+    "description": "A fictional company website for my maturita work",
+    "homepage": "https://davidstraka2.github.io/maturita",
+    "bugs": "https://github.com/davidstraka2/maturita/issues",
+    "license": "MIT",
+    "author": "David Straka (https://github.com/davidstraka2)",
+    "main": "index.html",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/davidstraka2/maturita"
+    },
+    "private": true
+}
