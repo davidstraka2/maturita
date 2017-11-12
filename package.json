@@ -17,8 +17,10 @@
         "watch-scss": "onchange \"scss/*.scss\" -- npm run scss"
     },
     "devDependencies": {
+        "autoprefixer": "^7.1.6",
         "node-sass": "^4.6.1",
-        "onchange": "^3.2.1"
+        "onchange": "^3.2.1",
+        "postcss-cli": "^4.1.1"
     },
     "private": true
 }
