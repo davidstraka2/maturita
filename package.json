@@ -16,7 +16,8 @@
         "start": "index.html"
     },
     "devDependencies": {
-        "node-sass": "^4.6.1"
+        "node-sass": "^4.6.1",
+        "onchange": "^3.2.1"
     },
     "private": true
 }
