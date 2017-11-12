@@ -11,5 +11,8 @@
         "type": "git",
         "url": "https://github.com/davidstraka2/maturita"
     },
+    "scripts": {
+        "start": "index.html"
+    },
     "private": true
 }
