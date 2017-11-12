@@ -12,6 +12,7 @@
         "url": "https://github.com/davidstraka2/maturita"
     },
     "scripts": {
+        "autoprefixer": "postcss -u autoprefixer -r css/*",
         "scss": "node-sass --output-style compressed -o css scss",
         "start": "index.html",
         "watch-scss": "onchange \"scss/*.scss\" -- npm run scss"
@@ -22,5 +23,12 @@
         "onchange": "^3.2.1",
         "postcss-cli": "^4.1.1"
     },
-    "private": true
+    "private": true,
+    "browserslist": [
+        "last 2 Chrome versions",
+        "last 2 ChromeAndroid versions",
+        "last 2 Edge versions",
+        "last 2 Firefox versions",
+        "last 2 Opera versions"
+    ]
 }
