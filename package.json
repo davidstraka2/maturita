@@ -13,7 +13,8 @@
     },
     "scripts": {
         "scss": "node-sass --output-style compressed -o css scss",
-        "start": "index.html"
+        "start": "index.html",
+        "watch-scss": "onchange \"scss/*.scss\" -- npm run scss"
     },
     "devDependencies": {
         "node-sass": "^4.6.1",
