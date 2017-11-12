@@ -12,6 +12,7 @@
         "url": "https://github.com/davidstraka2/maturita"
     },
     "scripts": {
+        "scss": "node-sass --output-style compressed -o css scss",
         "start": "index.html"
     },
     "devDependencies": {
