@@ -20,6 +20,8 @@
     "devDependencies": {
         "autoprefixer": "^7.1.6",
         "eslint": "^4.11.0",
+        "eslint-config-airbnb-base": "^12.1.0",
+        "eslint-plugin-import": "^2.8.0",
         "node-sass": "^4.6.1",
         "onchange": "^3.2.1",
         "postcss-cli": "^4.1.1"
@@ -31,5 +33,8 @@
         "last 2 Edge versions",
         "last 2 Firefox versions",
         "last 2 Opera versions"
-    ]
+    ],
+    "eslintConfig": {
+        "extends": "airbnb-base"
+    }
 }
