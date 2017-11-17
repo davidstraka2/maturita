@@ -19,6 +19,7 @@
     },
     "devDependencies": {
         "autoprefixer": "^7.1.6",
+        "eslint": "^4.11.0",
         "node-sass": "^4.6.1",
         "onchange": "^3.2.1",
         "postcss-cli": "^4.1.1"
