@@ -23,6 +23,7 @@
         "eslint-config-airbnb-base": "^12.1.0",
         "eslint-plugin-import": "^2.8.0",
         "fs-extra": "^4.0.2",
+        "glob": "^7.1.2",
         "node-sass": "^4.6.1",
         "onchange": "^3.2.1",
         "postcss-cli": "^4.1.1",
