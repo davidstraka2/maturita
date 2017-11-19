@@ -129,6 +129,12 @@
             "template-curly-spacing": [
                 "warn",
                 "always"
+            ],
+            "import/no-extraneous-dependencies": [
+                "error",
+                {
+                    "devDependencies": true
+                }
             ]
         }
     }
