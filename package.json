@@ -21,6 +21,7 @@
         "autoprefixer": "^7.1.6",
         "babel-cli": "^6.26.0",
         "babel-preset-env": "^1.6.1",
+        "browserify": "^14.5.0",
         "eslint": "^4.11.0",
         "eslint-config-airbnb-base": "^12.1.0",
         "eslint-plugin-import": "^2.8.0",
