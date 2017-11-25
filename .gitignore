@@ -1,2 +1,5 @@
+[Tt]humbs.db
+.vscode/
+tempCodeRunnerFile
 node_modules/
-Thumbs.db
+/dist/
