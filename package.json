@@ -12,10 +12,10 @@
         "url": "https://github.com/davidstraka2/maturita"
     },
     "scripts": {
-        "autoprefixer": "postcss -u autoprefixer -r css/*",
-        "scss": "node-sass --output-style compressed -o css scss",
+        "autoprefixer": "postcss -u autoprefixer -r src/css/*",
+        "scss": "node-sass --output-style compressed -o src/css src/scss",
         "start": "index.html",
-        "watch-scss": "onchange \"scss/*.scss\" -- npm run scss"
+        "watch-scss": "onchange \"src/scss/*.scss\" -- npm run scss"
     },
     "devDependencies": {
         "autoprefixer": "^7.1.6",
