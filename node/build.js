@@ -33,11 +33,23 @@ fs.copy(`${ cwd }/LICENSE`, `${ dist }/LICENSE`)
     .catch(err => console.log(err));
 
 // index.html
-fs.copy(`${ src }/index.html`, `${ dist }/index.html`)
-    .then(() => console.log('Copied index.html'))
-    .catch(err => console.log(err));
+fs.readFile(`${ src }/index.html`, 'utf-8')
+    .then(data => {
+        data = data.replace(/<script src="[^"]+?"><\/script>/g, '');
+        let idx = data.search('</body>');
+        data = `${ data.slice(0, idx) }<script src="js/bundle.js"></script>\n` +
+            `${ data.slice(idx) }`;
+        fs.writeFile(`${ dist }/index.html`, data)
+            .then(() => console.log('Copied and modified index.html'))
+            .catch(err => console.log(err));
+    }).catch(err => console.log(err));
 
 // css
 fs.copy(`${ src }/css/`, `${ dist }/css/`)
     .then(() => console.log('Copied css'))
+    .catch(err => console.log(err));
+
+// js
+fs.copy(`${ src }/js-min/bundle.js`, `${ dist }/js/bundle.js`)
+    .then(() => console.log('Copied js'))
     .catch(err => console.log(err));
