@@ -15,6 +15,7 @@
         "autoprefixer": "postcss -u autoprefixer -r src/css/*.css",
         "build": "npm run css && node node/build.js",
         "css": "npm run sass && npm run autoprefixer",
+        "lint:js": "eslint src/js-raw/",
         "sass": "node-sass --output-style compressed -o src/css src/scss",
         "start": "start src/index.html",
         "watch-scss": "onchange \"src/scss/*.scss\" -- npm run css"
@@ -50,9 +51,13 @@
     },
     "eslintConfig": {
         "env": {
-            "browser": true
+            "browser": true,
+            "node": false
         },
         "extends": "airbnb-base",
+        "parserOptions": {
+            "sourceType": "script"
+        },
         "rules": {
             "arrow-parens": [
                 "warn",
@@ -151,6 +156,10 @@
             "space-before-function-paren": [
                 "warn",
                 "never"
+            ],
+            "strict": [
+                "error",
+                "global"
             ],
             "template-curly-spacing": [
                 "warn",

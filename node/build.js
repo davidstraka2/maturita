@@ -1,4 +1,8 @@
-/* eslint no-console: off */
+/* eslint-env node */
+/* eslint
+    no-console: off,
+    strict: off,
+*/
 
 const fs = require('fs-extra');
 
