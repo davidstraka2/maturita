@@ -16,7 +16,7 @@
         "babel": "babel src/js-raw/ -d src/js-browser/",
         "build": "run-s flow:* minify:js && node node/build.js",
         "flow:css": "run-s sass autoprefixer",
-        "flow:js": "run-s babel",
+        "flow:js": "node node/clear-js-browser.js && run-s babel",
         "lint:js": "eslint src/js-raw/",
         "minify:js": "uglifyjs  --compress --mangle --name-cache src/js-min/cache.json --source-map --toplevel --output src/js-min/bundle.js -- src/js-browser/*.js",
         "sass": "node-sass --output-style compressed -o src/css src/scss",
