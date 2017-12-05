@@ -180,6 +180,21 @@
                     "devDependencies": true
                 }
             ]
-        }
+        },
+        "overrides": [
+            {
+                "files": ["node/**/*.js"],
+                "env": {
+                    "browser": false,
+                    "node": true
+                },
+                "parserOptions": {
+                    "sourceType": "module"
+                },
+                "rules": {
+                    "no-console": "off"
+                }
+            }
+        ]
     }
 }
