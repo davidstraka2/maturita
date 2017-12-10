@@ -3,3 +3,6 @@
 tempCodeRunnerFile
 node_modules/
 /dist/
+/src/styles/_lib-imports/
+/src/styles/_out/
+/src/styles/_parts-prefixed/

@@ -12,14 +12,13 @@
         "url": "https://github.com/davidstraka2/maturita"
     },
     "scripts": {
-        "autoprefixer": "postcss -u autoprefixer -r src/css/*.css",
         "babel": "babel src/js-raw/ -d src/js-browser/",
         "build": "run-s flow:* minify:js && node node/build.js",
-        "flow:css": "run-s sass autoprefixer",
+        "flow:css": "node node/flow-css.js && run-s sass",
         "flow:js": "node node/clear-js-browser.js && run-s babel",
         "lint:js": "eslint src/js-raw/",
         "minify:js": "uglifyjs  --compress --mangle --name-cache src/js-min/cache.json --source-map --toplevel --output src/js-min/bundle.js -- src/js-browser/*.js",
-        "sass": "node-sass --output-style compressed -o src/css src/scss",
+        "sass": "node-sass --output-style compressed -o src/styles/_out/ --source-map true src/styles/main/",
         "start": "start src/index.html",
         "watch": "run-p watch:*",
         "watch:js": "onchange \"src/js-raw/*.js\" -- npm run flow:js",
