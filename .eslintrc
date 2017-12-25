@@ -1,0 +1,64 @@
+{
+    "extends": "airbnb-base",
+    "root": true,
+    "rules": {
+        "arrow-parens": ["warn", "as-needed"],
+        "consistent-return": "off",
+        "curly": ["warn", "multi-or-nest", "consistent"],
+        "func-names": "off",
+        "indent": ["warn", 4, {"SwitchCase": 1}],
+        "linebreak-style": "off",
+        "max-len": ["error", 80],
+        "no-console": "off",
+        "no-continue": "off",
+        "no-labels": ["error", {"allowLoop": true}],
+        "no-mixed-operators": ["warn", {
+            "groups": [
+                ["%", "**", "*"],
+                ["%", "**", "/"],
+                ["&", "|", "^", "~", "<<", ">>", ">>>"],
+                ["==", "!=", "===", "!==", ">", ">=", "<", "<="],
+                ["&&", "||"],
+                ["in", "instanceof"]
+            ],
+            "allowSamePrecedence": false
+        }],
+        "no-param-reassign": "off",
+        "no-plusplus": "off",
+        "no-restricted-syntax": [
+            "error",
+            {
+                "selector": "ForInStatement",
+                "message": "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array."
+            },
+            {
+                "selector": "ForOfStatement",
+                "message": "iterators/generators require regenerator-runtime, which is too heavyweight for this guide to allow them. Separately, loops should be avoided in favor of array iterations."
+            },
+            {
+                "selector": "WithStatement",
+                "message": "`with` is disallowed in strict mode because it makes code impossible to predict and optimize."
+            }
+        ],
+        "object-curly-spacing": ["warn", "never"],
+        "one-var": "off",
+        "prefer-const": "off",
+        "space-before-function-paren": ["warn", "never"],
+        "template-curly-spacing": ["warn", "always"],
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
+    },
+    "overrides": [
+        {
+            "files": [
+                "src/**/*.js"
+            ],
+            "env": {
+                "browser": true,
+                "node": false
+            },
+            "rules": {
+                "no-console": "warn"
+            }
+        }
+    ]
+}
