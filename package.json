@@ -12,16 +12,20 @@
         "url": "https://github.com/davidstraka2/maturita"
     },
     "scripts": {
-        "babel": "babel src/js-raw/ -d src/js-browser/",
-        "build": "run-s flow:* minify:js && node node/build.js",
+        "build": "run-s flow:* flow-js:babel-main flow-js:babel-modules flow-js:bundle minify:js && node node/build.js",
         "flow:css": "node node/flow-css.js && run-s sass",
-        "flow:js": "node node/clear-js-browser.js && run-s babel",
+        "flow-js:babel-main": "node node/flow-js-babel-main.js && babel src/scripts/main/ -d src/scripts/_main-babel/ --source-maps",
+        "flow-js:babel-modules": "node node/flow-js-babel-modules.js && babel src/scripts/modules/ -d src/scripts/_modules-babel/ --source-maps",
+        "flow-js:bundle": "node node/flow-js-bundle.js",
+        "flow-js:main": "run-s flow-js:babel-main flow-js:bundle",
+        "flow-js:modules": "run-s flow-js:babel-modules flow-js:bundle",
         "lint:js": "eslint src/js-raw/",
-        "minify:js": "uglifyjs  --compress --mangle --name-cache src/js-min/cache.json --source-map --toplevel --output src/js-min/bundle.js -- src/js-browser/*.js",
+        "minify:js": "node node/minify-js.js",
         "sass": "node-sass --output-style compressed -o src/styles/_out/ --source-map true src/styles/main/",
         "start": "start src/index.html",
         "watch": "run-p watch:*",
-        "watch:js": "onchange \"src/js-raw/**/*.js\" -- npm run flow:js",
+        "watch:scripts-main": "onchange \"src/scripts/main/**/*.js\" -- npm run flow-js:main",
+        "watch:scripts-modules": "onchange \"src/scripts/modules/**/*.js\" -- npm run-s flow-js:modules",
         "watch:styles": "onchange \"src/styles/lib/**/*.css\" \"src/styles/lib/**/*.scss\" \"src/styles/main/**/*.css\" \"src/styles/main/**/*.scss\" \"src/styles/parts/**/*.css\" \"src/styles/parts/**/*.scss\" -- npm run flow:css"
     },
     "dependencies": {

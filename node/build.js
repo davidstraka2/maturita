@@ -1,8 +1,12 @@
 const fs = require('fs-extra');
 const glob = require('glob');
+const globby = require('globby');
+
+const longPath = require('./path/proj-to-sys').projToSys;
 
 const cwd = process.cwd();
-const dist = `${ cwd }/dist/${ Date.now().toString(36) }`;
+const distId = Date.now().toString(36);
+const dist = `${ cwd }/dist/${ distId }`;
 const src = `${ cwd }/src`;
 
 // Create new dist dir
@@ -40,13 +44,17 @@ fs.readFile(`${ src }/index.html`, 'utf-8')
                     patt.length) }`;
                 return match;
             },
-        // Remove all external scripts
-        ).replace(/<script src="[^"]+?"><\/script>/g, '');
-        data = data.replace(/<script src="[^"]+?"><\/script>/g, '');
-        // Add js/bundle.js script at the end of body
-        let idx = data.search('</body>');
-        data = `${ data.slice(0, idx) }<script src="js/bundle.js"></script>\n` +
-            `${ data.slice(idx) }`;
+        // Replace scripts w/ scripts/_main/* src with js/* src
+        ).replace(
+            /<script src="[^"]+?">/g,
+            match => {
+                let patt = 'src="scripts/_bundle/';
+                let idx = match.search(patt);
+                match = `${ match.slice(0, idx) }src="js/${ match.slice(idx +
+                    patt.length) }`;
+                return match;
+            },
+        );
         fs.writeFile(`${ dist }/index.html`, data)
             .then(() => console.log('Copied and modified index.html'))
             .catch(err => console.log(err));
@@ -75,6 +83,14 @@ glob(`${ src }/styles/_out/**/*.css`, (err, files) => {
 });
 
 // js
-fs.copy(`${ src }/js-min/bundle.js`, `${ dist }/js/bundle.js`)
-    .then(() => console.log('Copied js'))
+globby(`${ longPath() }src/scripts/_out/**/*.js`)
+    .then(files => files.forEach(file => fs.readFile(file, 'utf-8')
+        .then(content => {
+            fs.outputFile(
+                file.replace('src/scripts/_out/', `dist/${ distId }/js/`),
+                content.slice(0, content.lastIndexOf('\n')),
+            ).then(() => console.log(`Copied and modified ${ file }`))
+                .catch(err3 => console.log(err3));
+        })
+        .catch(err2 => console.log(err2))))
     .catch(err => console.log(err));
