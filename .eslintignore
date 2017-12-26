@@ -1,2 +1,6 @@
-node_modules/**/*.js
-dist/**/*.js
+node_modules/
+dist/
+src/scripts/_bundle/
+src/scripts/_main-babel/
+src/scripts/_modules-babel/
+src/scripts/_out/
