@@ -3,6 +3,7 @@ const glob = require('glob');
 const globby = require('globby');
 
 const longPath = require('./path/proj-to-sys').projToSys;
+const {minify} = require('./minify-html');
 
 const cwd = process.cwd();
 const distId = Date.now().toString(36);
@@ -55,9 +56,11 @@ fs.readFile(`${ src }/index.html`, 'utf-8')
                 return match;
             },
         );
-        fs.writeFile(`${ dist }/index.html`, data)
-            .then(() => console.log('Copied and modified index.html'))
-            .catch(err => console.log(err));
+        console.log('Modified ./src/index.html contents (shadow)');
+        minify([{
+            content: data,
+            outputFile: `./dist/${ distId }/index.html`,
+        }]);
     }).catch(err => console.log(err));
 
 // css
