@@ -11,7 +11,7 @@ const processCode = html => html
         ),
         (match, p1, p2) => `${ p1 }css${ p2 }`,
     ).replace(
-        /(<script data-prod="build" src="[./]*)scripts\/_bundle(\/[^>]*?>)/g,
+        /(<script data-prod="build" src="[./]*)scripts\/_out(\/[^>]*?>)/g,
         (match, p1, p2) => `${ p1 }js${ p2 }`,
     ).replace(
         /(<[^>]*?)data-prod="build"([^>]*?>)/g,
