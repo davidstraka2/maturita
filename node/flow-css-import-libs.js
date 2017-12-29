@@ -5,7 +5,7 @@ const postcssImport = require('postcss-import');
 
 const importLibs = () => globby('./src/styles/lib/**/*.{css,scss}')
     .then(files => {
-        files = files.map(file => (
+        const IOObjs = files.map(file => (
             {
                 inFile: file,
                 outFile: file.replace(
@@ -14,7 +14,7 @@ const importLibs = () => globby('./src/styles/lib/**/*.{css,scss}')
                 ),
             }
         ));
-        files.forEach(file => fs.readFile(file.inFile, 'utf-8')
+        IOObjs.forEach(file => fs.readFile(file.inFile, 'utf-8')
             .then(content => postcss(postcssImport)
                 .process(content, {
                     from: file.inFile,
@@ -26,14 +26,10 @@ const importLibs = () => globby('./src/styles/lib/**/*.{css,scss}')
             .catch(err => console.log(err)));
     }).catch(err => console.log(err));
 
-const emptyAndImport = () => {
-    try {
-        fs.emptyDirSync('./src/styles/_lib-imports/');
+const emptyAndImport = () => fs.emptyDir('./src/styles/_lib-imports/')
+    .then(() => {
         console.log('Emptied ./src/styles/_lib-imports/');
         importLibs();
-    } catch (err) {
-        console.log(err);
-    }
-};
+    }).catch(err => console.log(err));
 
 emptyAndImport();

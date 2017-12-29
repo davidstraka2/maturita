@@ -5,7 +5,7 @@ const postcss = require('postcss');
 
 const prefix = () => globby('./src/styles/parts/**/*.{css,scss}')
     .then(files => {
-        files = files.map(file => (
+        const IOObjs = files.map(file => (
             {
                 inFile: file,
                 outFile: file.replace(
@@ -14,7 +14,7 @@ const prefix = () => globby('./src/styles/parts/**/*.{css,scss}')
                 ),
             }
         ));
-        files.forEach(file => fs.readFile(file.inFile, 'utf-8')
+        IOObjs.forEach(file => fs.readFile(file.inFile, 'utf-8')
             .then(content => postcss(autoprefixer)
                 .process(content, {
                     from: file.inFile,
@@ -26,14 +26,10 @@ const prefix = () => globby('./src/styles/parts/**/*.{css,scss}')
             .catch(err => console.log(err)));
     }).catch(err => console.log(err));
 
-const emptyAndPrefix = () => {
-    try {
-        fs.emptyDirSync('./src/styles/_parts-prefixed/');
+const emptyAndPrefix = () => fs.emptyDir('./src/styles/_parts-prefixed/')
+    .then(() => {
         console.log('Emptied ./src/styles/_parts-prefixed/');
         prefix();
-    } catch (err) {
-        console.log(err);
-    }
-};
+    }).catch(err => console.log(err));
 
 emptyAndPrefix();
