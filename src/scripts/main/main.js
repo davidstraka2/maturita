@@ -1,5 +1,5 @@
 import * as lib from '../libs/test';
-import {a, c} from '../_modules-babel/test';
+import {a, c} from '../_parts-babel/test';
 
 a();
 lib.a();
