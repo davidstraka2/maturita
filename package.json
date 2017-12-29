@@ -12,8 +12,12 @@
         "url": "https://github.com/davidstraka2/maturita"
     },
     "scripts": {
-        "build": "run-s flow:* flow-js:babel-main flow-js:babel-modules flow-js:bundle minify:js && node node/build.js",
-        "flow:css": "node node/flow-css.js && run-s sass",
+        "build": "run-s flow-css:all flow-js:babel-main flow-js:babel-modules flow-js:bundle minify:js && node node/build.js",
+        "flow-css:all": "run-p flow-css:import-libs flow-css:prefix && npm run sass",
+        "flow-css:import-libs": "node node/flow-css-import-libs.js",
+        "flow-css:import-libs-sass": "node node/flow-css-import-libs.js && npm run sass",
+        "flow-css:prefix": "node node/flow-css-prefix.js",
+        "flow-css:prefix-sass": "node node/flow-css-prefix.js && npm run sass",
         "flow-js:babel-main": "node node/flow-js-babel-main.js && babel src/scripts/main/ -d src/scripts/_main-babel/ --source-maps",
         "flow-js:babel-modules": "node node/flow-js-babel-modules.js && babel src/scripts/modules/ -d src/scripts/_modules-babel/ --source-maps",
         "flow-js:bundle": "node node/flow-js-bundle.js",
@@ -27,7 +31,9 @@
         "watch": "run-p watch:*",
         "watch:scripts-main": "onchange \"src/scripts/main/**/*.js\" -- npm run flow-js:main",
         "watch:scripts-modules": "onchange \"src/scripts/modules/**/*.js\" -- npm run-s flow-js:modules",
-        "watch:styles": "onchange \"src/styles/lib/**/*.css\" \"src/styles/lib/**/*.scss\" \"src/styles/main/**/*.css\" \"src/styles/main/**/*.scss\" \"src/styles/parts/**/*.css\" \"src/styles/parts/**/*.scss\" -- npm run flow:css"
+        "watch:styles-lib": "onchange \"src/styles/lib/**/*.css\" \"src/styles/lib/**/*.scss\" -- npm run flow-css:import-libs-sass",
+        "watch:styles-parts": "onchange \"src/styles/parts/**/*.css\" \"src/styles/parts/**/*.scss\" -- npm run flow-css:prefix-sass",
+        "watch:styles-main": "onchange  \"src/styles/main/**/*.css\" \"src/styles/main/**/*.scss\"  -- npm run sass"
     },
     "dependencies": {
         "normalize.css": "^7.0.0"
