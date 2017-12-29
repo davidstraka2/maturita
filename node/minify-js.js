@@ -2,15 +2,12 @@ const fs = require('fs-extra');
 const glob = require('glob');
 const uglify = require('uglify-es');
 
-const cwd = process.cwd();
-const src = `${ cwd }/src`;
-
 // Empty src/scripts/_out/
-fs.emptyDir(`${ src }/scripts/_out/`)
-    .then(() => console.log('Emptied src/scripts/_out/'))
+fs.emptyDir('./src/scripts/_out/')
+    .then(() => console.log('Emptied ./src/scripts/_out/'))
     .catch(err => console.log(err));
 
-glob(`${ src }/scripts/_bundle/**/*.js`, (err, files) => {
+glob('./src/scripts/_bundle/**/*.js', (err, files) => {
     if (err) {
         console.log(err);
     } else {
