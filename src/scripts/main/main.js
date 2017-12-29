@@ -1,4 +1,4 @@
-import * as lib from '../libs/test';
+import * as lib from '../lib/test';
 import {a, c} from '../_parts-babel/test';
 
 a();
