@@ -1,0 +1,25 @@
+header,
+article {
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.product-pic {
+    width: 100%;
+
+    img {
+        width: 100%;
+    }
+}
+
+p {
+    color: $main-text-color;
+    max-width: 40em;
+    width: 100%;
+}
+
+article img {
+    max-height: 60vh;
+    max-width: 100%;
+}
