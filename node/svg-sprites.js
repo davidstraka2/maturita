@@ -29,8 +29,8 @@ const makeSpritesheets = () => {
 
 const emptyAndSprites = () => fs.emptyDir('./src/assets/svg-sprites/')
     .then(() => {
-        makeSpritesheets();
         console.log('Emptied ./src/assets/svg-sprites/');
+        makeSpritesheets();
     }).catch(err => console.log(err));
 
 emptyAndSprites();
