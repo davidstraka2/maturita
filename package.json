@@ -12,7 +12,7 @@
         "url": "https://github.com/davidstraka2/maturita"
     },
     "scripts": {
-        "build": "run-p svg-sprites flow:* && node node/build.js",
+        "build": "run-p img-thumbs svg-sprites flow:* && node node/build.js",
         "flow:css": "run-p flow-css:import-lib flow-css:prefix && npm run flow-css:compile",
         "flow:js": "run-p flow-js:babel-main flow-js:babel-parts && run-s flow-js:bundle minify:js",
         "flow-css:compile": "node node/flow-css-out.js && npm run sass",
@@ -26,6 +26,7 @@
         "flow-js:lib": "run-s flow-js:bundle minify:js",
         "flow-js:main": "run-s flow-js:babel-main flow-js:bundle minify:js",
         "flow-js:parts": "run-s flow-js:babel-parts flow-js:bundle minify:js",
+        "img-thumbs": "node node/img-thumbs.js",
         "lint:js": "eslint src/scripts/lib/ && eslint src/scripts/main/ && eslint src/scripts/parts/",
         "minify:js": "node node/minify-js.js",
         "postinstall": "npm run build",
@@ -33,6 +34,7 @@
         "start": "start src/index.html",
         "svg-sprites": "node node/svg-sprites.js",
         "watch": "run-p watch:*",
+        "watch:pics": "onchange \"src/assets/pics/**/*\" -- npm run img-thumbs",
         "watch:scripts-lib": "onchange \"src/scripts/lib/**/*.js\" -- npm run flow-js:lib",
         "watch:scripts-main": "onchange \"src/scripts/main/**/*.js\" -- npm run flow-js:main",
         "watch:scripts-parts": "onchange \"src/scripts/parts/**/*.js\" -- npm run flow-js:parts",
