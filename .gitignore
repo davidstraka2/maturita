@@ -3,6 +3,8 @@
 tempCodeRunnerFile
 node_modules/
 /dist/
+/src/assets/pics-thumbs/
+/src/assets/svg-sprites/
 /src/scripts/_bundle/
 /src/scripts/_main-babel/
 /src/scripts/_out/
