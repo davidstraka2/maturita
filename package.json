@@ -12,7 +12,7 @@
         "url": "https://github.com/davidstraka2/maturita"
     },
     "scripts": {
-        "build": "run-p flow:* && node node/build.js",
+        "build": "run-p svg-sprites flow:* && node node/build.js",
         "flow:css": "run-p flow-css:import-lib flow-css:prefix && npm run flow-css:compile",
         "flow:js": "run-p flow-js:babel-main flow-js:babel-parts && run-s flow-js:bundle minify:js",
         "flow-css:compile": "node node/flow-css-out.js && npm run sass",
@@ -31,10 +31,12 @@
         "postinstall": "npm run build",
         "sass": "node-sass --output-style compressed -o src/styles/_out/ --source-map true src/styles/main/",
         "start": "start src/index.html",
+        "svg-sprites": "node node/svg-sprites.js",
         "watch": "run-p watch:*",
         "watch:scripts-lib": "onchange \"src/scripts/lib/**/*.js\" -- npm run flow-js:lib",
         "watch:scripts-main": "onchange \"src/scripts/main/**/*.js\" -- npm run flow-js:main",
         "watch:scripts-parts": "onchange \"src/scripts/parts/**/*.js\" -- npm run flow-js:parts",
+        "watch:spritelist": "onchange \"src/spritelist.json\" -- npm run svg-sprites",
         "watch:styles-lib": "onchange \"src/styles/lib/**/*.css\" \"src/styles/lib/**/*.scss\" -- npm run flow-css:import-lib-compile",
         "watch:styles-parts": "onchange \"src/styles/parts/**/*.css\" \"src/styles/parts/**/*.scss\" -- npm run flow-css:prefix-compile",
         "watch:styles-main": "onchange  \"src/styles/main/**/*.css\" \"src/styles/main/**/*.scss\"  -- npm run flow-css:compile"

@@ -1,0 +1,11 @@
+[
+    {
+        "name": "icons",
+        "sprites": [
+            {
+                "id": "menu",
+                "path": "./node_modules/material-design-icons/navigation/svg/production/ic_menu_48px.svg"
+            }
+        ]
+    }
+]
