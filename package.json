@@ -29,6 +29,7 @@
         "img-thumbs": "node node/img-thumbs.js",
         "lint:js": "eslint src/scripts/lib/ && eslint src/scripts/main/ && eslint src/scripts/parts/",
         "minify:js": "node node/minify-js.js",
+        "optimize-jpeg": "node node/optimize-jpeg/optimize-jpeg.js",
         "postinstall": "npm run build",
         "sass": "node-sass --output-style compressed -o src/styles/_out/ --source-map true src/styles/main/",
         "start": "start src/index.html",

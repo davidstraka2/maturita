@@ -3,6 +3,8 @@
 tempCodeRunnerFile
 node_modules/
 /dist/
+/node/optimize-jpeg/input/
+/node/optimize-jpeg/output/
 /src/assets/pics-thumbs/
 /src/assets/svg-sprites/
 /src/scripts/_bundle/
