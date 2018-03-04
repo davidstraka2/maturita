@@ -1,0 +1,36 @@
+.modal {
+    background: rgba(0, 0, 0, 0.85);
+    bottom: 0;
+    display: none;
+    position: fixed;
+    width: 100vw;
+}
+
+body.modal-big-on {
+    nav {
+        filter: blur(2px);
+    }
+
+    .modal {
+        height: 100vw;
+        z-index: 70;
+    }
+}
+
+body.modal-small-on .modal {
+    height: calc(100vh - #{$nav-height});
+    z-index: 30;
+}
+
+body.modal-big-on,
+body.modal-small-on {
+    overflow: hidden;
+
+    .modal {
+        display: block;
+    }
+
+    main {
+        filter: blur(2px);
+    }
+}

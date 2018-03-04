@@ -1,0 +1,41 @@
+main.product {
+    margin-top: $nav-height;
+    width: 100%;
+
+    article,
+    section {
+        align-items: center;
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    .img {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        max-width: 60em;
+    }
+
+    img {
+        max-height: calc((100vh - #{$nav-height + $nav-shadow-height}) / 1.25);
+        max-width: 100%;
+    }
+
+    h1,
+    p, {
+        font-family: $main-font;
+        max-width: 40em;
+    }
+
+    h1 {
+        font-size: 3em;
+        margin: 0.5em 1rem;
+    }
+
+    p {
+        color: $main-clr-text;
+        font-size: 1.25em;
+        line-height: 1.5;
+        margin: 1em 1rem;
+    }
+}

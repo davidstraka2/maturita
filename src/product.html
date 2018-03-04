@@ -6,6 +6,7 @@
 <title>Product Page</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffc107">
 
 <link data-prod="build" rel="stylesheet" href="styles/_out/product.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
@@ -22,23 +23,40 @@
 </head>
 <body>
 
+<div class="modal"></div>
+
 <nav>
     <ul class="header">
-        <li><img class="menu-toggle" src="assets/icons/ic_menu_48px.svg"></li>
-        <li><img class="logo" src="assets/temp-logo.svg"></li>
+        <li class="logo">
+            <a href="#">
+                <object class="svg noselect" data="assets/temp-logo.svg"></object>
+            </a>
+        </li>
+        <li class="menu-toggle">
+            <button>
+                <svg class="svg" viewBox="0 0 48 48">
+                    <use xlink:href="assets/svg-sprites/icons.svg#menu">
+                </svg>
+            </button>
+        </li>
     </ul>
     <ul class="menu">
+        <li><h1>Menu</h1></li>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
         <li><a href="#">Link 1</a></li>
         <li><a href="#">Link 2</a></li>
         <li><a href="#">Link 3</a></li>
     </ul>
 </nav>
 
-<main>
+<main class="product">
 
+<!--
 <header>
     <div class="product-pic">
-        <!-- <h1>Product Name</h1> -->
+        <!-/- <h1>Product Name</h1> -/->
         <img src="assets/pics/temp-img-fhd.png">
     </div>
     <p class="product-summary">
@@ -59,128 +77,141 @@
         mattis justo eget, semper nunc.
     </p>
 </header>
+-->
 
 <article>
 
 <section>
-    <h1>Title</h1>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam gravida
-        posuere odio, vel cursus metus pulvinar non. Aliquam vel imperdiet lacus.
-        Nulla faucibus consequat leo at malesuada. Morbi sit amet augue pharetra,
-        dictum justo eget, porta lectus. Nam pretium non arcu at bibendum. Sed
-        consequat tortor vel dui dapibus, eget lacinia nulla auctor. Praesent
-        lobortis, eros at fringilla tempus, velit tortor rutrum ex, et rutrum
-        dolor erat ac tellus. Nulla commodo rhoncus orci, tristique porta nisi
-        auctor at. Nam ex erat, consequat eu est sit amet, sollicitudin aliquam
-        ligula. Nulla facilisi. Vivamus aliquet risus quis scelerisque
-        pellentesque. Vivamus pulvinar tincidunt orci, vel feugiat magna rutrum
-        eget. Vestibulum vulputate augue id malesuada euismod. Sed vel
-        condimentum orci. Cras aliquet, diam eu fringilla molestie, mi quam
-        dignissim purus, vitae tristique est est in risus. Mauris a est aliquam,
-        mattis justo eget, semper nunc.
-    </p>
-    <p>
-        Maecenas vel mollis massa. Maecenas sagittis ullamcorper condimentum.
-        Nunc lorem nibh, maximus in diam ut, cursus vehicula urna. Sed nibh
-        tortor, posuere vel urna sit amet, fringilla tempus magna. Pellentesque
-        sit amet ligula ornare, tristique magna id, suscipit est. Sed malesuada
-        quis ante et aliquet. Mauris in dolor et nisi commodo maximus ac sed
-        magna. Nam non metus interdum, malesuada dui id, consectetur sem.
-    </p>
-    <p>
-        Morbi accumsan quam a sagittis viverra. Nullam mattis ex felis, nec
-        accumsan purus rutrum sit amet. Cras accumsan turpis eu lacinia
-        ultricies. Curabitur lobortis nulla laoreet, consectetur massa vel,
-        semper orci. In et mollis lorem. Aenean id augue in eros luctus convallis
-        in a nunc. Phasellus eros nibh, porttitor et arcu quis, vehicula
-        tincidunt justo. Sed eget euismod erat, gravida molestie nulla.
-        Suspendisse potenti. Etiam commodo felis et mauris lobortis venenatis.
-        Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris
-        auctor tortor quis lacus vehicula volutpat.
-    </p>
+    <div class="text">
+        <h1>Title</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam gravida
+            posuere odio, vel cursus metus pulvinar non. Aliquam vel imperdiet lacus.
+            Nulla faucibus consequat leo at malesuada. Morbi sit amet augue pharetra,
+            dictum justo eget, porta lectus. Nam pretium non arcu at bibendum. Sed
+            consequat tortor vel dui dapibus, eget lacinia nulla auctor. Praesent
+            lobortis, eros at fringilla tempus, velit tortor rutrum ex, et rutrum
+            dolor erat ac tellus. Nulla commodo rhoncus orci, tristique porta nisi
+            auctor at. Nam ex erat, consequat eu est sit amet, sollicitudin aliquam
+            ligula. Nulla facilisi. Vivamus aliquet risus quis scelerisque
+            pellentesque. Vivamus pulvinar tincidunt orci, vel feugiat magna rutrum
+            eget. Vestibulum vulputate augue id malesuada euismod. Sed vel
+            condimentum orci. Cras aliquet, diam eu fringilla molestie, mi quam
+            dignissim purus, vitae tristique est est in risus. Mauris a est aliquam,
+            mattis justo eget, semper nunc.
+        </p>
+        <p>
+            Maecenas vel mollis massa. Maecenas sagittis ullamcorper condimentum.
+            Nunc lorem nibh, maximus in diam ut, cursus vehicula urna. Sed nibh
+            tortor, posuere vel urna sit amet, fringilla tempus magna. Pellentesque
+            sit amet ligula ornare, tristique magna id, suscipit est. Sed malesuada
+            quis ante et aliquet. Mauris in dolor et nisi commodo maximus ac sed
+            magna. Nam non metus interdum, malesuada dui id, consectetur sem.
+        </p>
+        <p>
+            Morbi accumsan quam a sagittis viverra. Nullam mattis ex felis, nec
+            accumsan purus rutrum sit amet. Cras accumsan turpis eu lacinia
+            ultricies. Curabitur lobortis nulla laoreet, consectetur massa vel,
+            semper orci. In et mollis lorem. Aenean id augue in eros luctus convallis
+            in a nunc. Phasellus eros nibh, porttitor et arcu quis, vehicula
+            tincidunt justo. Sed eget euismod erat, gravida molestie nulla.
+            Suspendisse potenti. Etiam commodo felis et mauris lobortis venenatis.
+            Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris
+            auctor tortor quis lacus vehicula volutpat.
+        </p>
+    </div>
+    <div class="img">
+        <img src="assets/pics/temp-img-fhd.png">
+    </div>
 </section>
-<img src="assets/pics/temp-img-fhd.png">
 
 <section>
-    <h1>Title</h1>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam gravida
-        posuere odio, vel cursus metus pulvinar non. Aliquam vel imperdiet lacus.
-        Nulla faucibus consequat leo at malesuada. Morbi sit amet augue pharetra,
-        dictum justo eget, porta lectus. Nam pretium non arcu at bibendum. Sed
-        consequat tortor vel dui dapibus, eget lacinia nulla auctor. Praesent
-        lobortis, eros at fringilla tempus, velit tortor rutrum ex, et rutrum
-        dolor erat ac tellus. Nulla commodo rhoncus orci, tristique porta nisi
-        auctor at. Nam ex erat, consequat eu est sit amet, sollicitudin aliquam
-        ligula. Nulla facilisi. Vivamus aliquet risus quis scelerisque
-        pellentesque. Vivamus pulvinar tincidunt orci, vel feugiat magna rutrum
-        eget. Vestibulum vulputate augue id malesuada euismod. Sed vel
-        condimentum orci. Cras aliquet, diam eu fringilla molestie, mi quam
-        dignissim purus, vitae tristique est est in risus. Mauris a est aliquam,
-        mattis justo eget, semper nunc.
-    </p>
-    <p>
-        Maecenas vel mollis massa. Maecenas sagittis ullamcorper condimentum.
-        Nunc lorem nibh, maximus in diam ut, cursus vehicula urna. Sed nibh
-        tortor, posuere vel urna sit amet, fringilla tempus magna. Pellentesque
-        sit amet ligula ornare, tristique magna id, suscipit est. Sed malesuada
-        quis ante et aliquet. Mauris in dolor et nisi commodo maximus ac sed
-        magna. Nam non metus interdum, malesuada dui id, consectetur sem.
-    </p>
-    <p>
-        Morbi accumsan quam a sagittis viverra. Nullam mattis ex felis, nec
-        accumsan purus rutrum sit amet. Cras accumsan turpis eu lacinia
-        ultricies. Curabitur lobortis nulla laoreet, consectetur massa vel,
-        semper orci. In et mollis lorem. Aenean id augue in eros luctus convallis
-        in a nunc. Phasellus eros nibh, porttitor et arcu quis, vehicula
-        tincidunt justo. Sed eget euismod erat, gravida molestie nulla.
-        Suspendisse potenti. Etiam commodo felis et mauris lobortis venenatis.
-        Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris
-        auctor tortor quis lacus vehicula volutpat.
-    </p>
+    <div class="text">
+        <h1>Title</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam gravida
+            posuere odio, vel cursus metus pulvinar non. Aliquam vel imperdiet lacus.
+            Nulla faucibus consequat leo at malesuada. Morbi sit amet augue pharetra,
+            dictum justo eget, porta lectus. Nam pretium non arcu at bibendum. Sed
+            consequat tortor vel dui dapibus, eget lacinia nulla auctor. Praesent
+            lobortis, eros at fringilla tempus, velit tortor rutrum ex, et rutrum
+            dolor erat ac tellus. Nulla commodo rhoncus orci, tristique porta nisi
+            auctor at. Nam ex erat, consequat eu est sit amet, sollicitudin aliquam
+            ligula. Nulla facilisi. Vivamus aliquet risus quis scelerisque
+            pellentesque. Vivamus pulvinar tincidunt orci, vel feugiat magna rutrum
+            eget. Vestibulum vulputate augue id malesuada euismod. Sed vel
+            condimentum orci. Cras aliquet, diam eu fringilla molestie, mi quam
+            dignissim purus, vitae tristique est est in risus. Mauris a est aliquam,
+            mattis justo eget, semper nunc.
+        </p>
+        <p>
+            Maecenas vel mollis massa. Maecenas sagittis ullamcorper condimentum.
+            Nunc lorem nibh, maximus in diam ut, cursus vehicula urna. Sed nibh
+            tortor, posuere vel urna sit amet, fringilla tempus magna. Pellentesque
+            sit amet ligula ornare, tristique magna id, suscipit est. Sed malesuada
+            quis ante et aliquet. Mauris in dolor et nisi commodo maximus ac sed
+            magna. Nam non metus interdum, malesuada dui id, consectetur sem.
+        </p>
+        <p>
+            Morbi accumsan quam a sagittis viverra. Nullam mattis ex felis, nec
+            accumsan purus rutrum sit amet. Cras accumsan turpis eu lacinia
+            ultricies. Curabitur lobortis nulla laoreet, consectetur massa vel,
+            semper orci. In et mollis lorem. Aenean id augue in eros luctus convallis
+            in a nunc. Phasellus eros nibh, porttitor et arcu quis, vehicula
+            tincidunt justo. Sed eget euismod erat, gravida molestie nulla.
+            Suspendisse potenti. Etiam commodo felis et mauris lobortis venenatis.
+            Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris
+            auctor tortor quis lacus vehicula volutpat.
+        </p>
+    </div>
+    <div class="img">
+        <img src="assets/pics/temp-img-fhd.png">
+    </div>
 </section>
-<img src="assets/pics/temp-img-fhd.png">
 
 <section>
-    <h1>Title</h1>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam gravida
-        posuere odio, vel cursus metus pulvinar non. Aliquam vel imperdiet lacus.
-        Nulla faucibus consequat leo at malesuada. Morbi sit amet augue pharetra,
-        dictum justo eget, porta lectus. Nam pretium non arcu at bibendum. Sed
-        consequat tortor vel dui dapibus, eget lacinia nulla auctor. Praesent
-        lobortis, eros at fringilla tempus, velit tortor rutrum ex, et rutrum
-        dolor erat ac tellus. Nulla commodo rhoncus orci, tristique porta nisi
-        auctor at. Nam ex erat, consequat eu est sit amet, sollicitudin aliquam
-        ligula. Nulla facilisi. Vivamus aliquet risus quis scelerisque
-        pellentesque. Vivamus pulvinar tincidunt orci, vel feugiat magna rutrum
-        eget. Vestibulum vulputate augue id malesuada euismod. Sed vel
-        condimentum orci. Cras aliquet, diam eu fringilla molestie, mi quam
-        dignissim purus, vitae tristique est est in risus. Mauris a est aliquam,
-        mattis justo eget, semper nunc.
-    </p>
-    <p>
-        Maecenas vel mollis massa. Maecenas sagittis ullamcorper condimentum.
-        Nunc lorem nibh, maximus in diam ut, cursus vehicula urna. Sed nibh
-        tortor, posuere vel urna sit amet, fringilla tempus magna. Pellentesque
-        sit amet ligula ornare, tristique magna id, suscipit est. Sed malesuada
-        quis ante et aliquet. Mauris in dolor et nisi commodo maximus ac sed
-        magna. Nam non metus interdum, malesuada dui id, consectetur sem.
-    </p>
-    <p>
-        Morbi accumsan quam a sagittis viverra. Nullam mattis ex felis, nec
-        accumsan purus rutrum sit amet. Cras accumsan turpis eu lacinia
-        ultricies. Curabitur lobortis nulla laoreet, consectetur massa vel,
-        semper orci. In et mollis lorem. Aenean id augue in eros luctus convallis
-        in a nunc. Phasellus eros nibh, porttitor et arcu quis, vehicula
-        tincidunt justo. Sed eget euismod erat, gravida molestie nulla.
-        Suspendisse potenti. Etiam commodo felis et mauris lobortis venenatis.
-        Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris
-        auctor tortor quis lacus vehicula volutpat.
-    </p>
+    <div class="text">
+        <h1>Title</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam gravida
+            posuere odio, vel cursus metus pulvinar non. Aliquam vel imperdiet lacus.
+            Nulla faucibus consequat leo at malesuada. Morbi sit amet augue pharetra,
+            dictum justo eget, porta lectus. Nam pretium non arcu at bibendum. Sed
+            consequat tortor vel dui dapibus, eget lacinia nulla auctor. Praesent
+            lobortis, eros at fringilla tempus, velit tortor rutrum ex, et rutrum
+            dolor erat ac tellus. Nulla commodo rhoncus orci, tristique porta nisi
+            auctor at. Nam ex erat, consequat eu est sit amet, sollicitudin aliquam
+            ligula. Nulla facilisi. Vivamus aliquet risus quis scelerisque
+            pellentesque. Vivamus pulvinar tincidunt orci, vel feugiat magna rutrum
+            eget. Vestibulum vulputate augue id malesuada euismod. Sed vel
+            condimentum orci. Cras aliquet, diam eu fringilla molestie, mi quam
+            dignissim purus, vitae tristique est est in risus. Mauris a est aliquam,
+            mattis justo eget, semper nunc.
+        </p>
+        <p>
+            Maecenas vel mollis massa. Maecenas sagittis ullamcorper condimentum.
+            Nunc lorem nibh, maximus in diam ut, cursus vehicula urna. Sed nibh
+            tortor, posuere vel urna sit amet, fringilla tempus magna. Pellentesque
+            sit amet ligula ornare, tristique magna id, suscipit est. Sed malesuada
+            quis ante et aliquet. Mauris in dolor et nisi commodo maximus ac sed
+            magna. Nam non metus interdum, malesuada dui id, consectetur sem.
+        </p>
+        <p>
+            Morbi accumsan quam a sagittis viverra. Nullam mattis ex felis, nec
+            accumsan purus rutrum sit amet. Cras accumsan turpis eu lacinia
+            ultricies. Curabitur lobortis nulla laoreet, consectetur massa vel,
+            semper orci. In et mollis lorem. Aenean id augue in eros luctus convallis
+            in a nunc. Phasellus eros nibh, porttitor et arcu quis, vehicula
+            tincidunt justo. Sed eget euismod erat, gravida molestie nulla.
+            Suspendisse potenti. Etiam commodo felis et mauris lobortis venenatis.
+            Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris
+            auctor tortor quis lacus vehicula volutpat.
+        </p>
+    </div>
+    <div class="img">
+        <img src="assets/pics/temp-img-fhd.png">
+    </div>
 </section>
-<img src="assets/pics/temp-img-fhd.png">
 
 </article>
 

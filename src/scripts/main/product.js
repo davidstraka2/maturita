@@ -1,7 +1,7 @@
-import product from '../_parts-babel/product';
+import nav from '../_parts-babel/nav';
 
-const ready = () => {
-    product();
+const docReady = () => {
+    nav();
 };
 
-window.addEventListener('load', ready);
+window.addEventListener('load', docReady);
