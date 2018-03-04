@@ -36,7 +36,13 @@ button {
 /* Classes */
 
 img.zoom {
-    cursor: zoom-in;
+    &:not(.lazy) {
+        cursor: zoom-in;
+    }
+
+    &.lazy.loaded {
+        cursor: zoom-in;
+    }
 }
 
 .svg.noselect {
