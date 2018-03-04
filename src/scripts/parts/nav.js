@@ -20,8 +20,8 @@ const prepDoc = () => {
     doc.menuToggle.addEventListener('click', menuToggle);
 };
 
-const ready = () => {
+const init = () => {
     prepDoc();
 };
 
-export default ready;
+export default init;
