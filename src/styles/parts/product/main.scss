@@ -17,8 +17,11 @@ main.product {
     }
 
     img {
+        display: block;
+        height: auto;
         max-height: calc((100vh - #{$nav-height + $nav-shadow-height}) / 1.25);
         max-width: 100%;
+        object-fit: contain;
     }
 
     h1,
