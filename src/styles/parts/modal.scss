@@ -4,6 +4,21 @@
     display: none;
     position: fixed;
     width: 100vw;
+
+    &.zoom {
+        cursor: zoom-out;
+    }
+}
+
+.modal-cvs {
+    display: none;
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
+
+    &.on {
+        display: block;
+    }
 }
 
 body.modal-big-on {
@@ -12,7 +27,7 @@ body.modal-big-on {
     }
 
     .modal {
-        height: 100vw;
+        height: 100vh;
         z-index: 70;
     }
 }

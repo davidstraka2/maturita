@@ -35,6 +35,10 @@ button {
 
 /* Classes */
 
+img.zoom {
+    cursor: zoom-in;
+}
+
 .svg.noselect {
     pointer-events: none;
 }
