@@ -8,6 +8,21 @@ const makeGitignore = require('./parts/build-gitignore').write;
 
 const distId = Date.now().toString(36);
 
+const assets = () => {
+    fs.ensureDirSync(`./dist/${ distId }/assets/`);
+    fs.copy('./src/assets/pics/', `./dist/${ distId }/assets/pics/`)
+        .then(() => console.log(
+            `Copied ./src/assets/pics/ to ./dist/${ distId }/assets/pics/`,
+        )).catch(err => console.log(err));
+    fs.copy(
+        './src/assets/svg-sprites/',
+        `./dist/${ distId }/assets/svg-sprites/`,
+    ).then(console.log(
+        `Copied ./src/assets/svg-sprites/ to ./dist/${
+            distId }/assets/svg-sprites/`,
+    )).catch(err => console.log(err));
+};
+
 const css = () => globby('./src/styles/_out/**/*.css')
     .then(files => {
         files = files.map(file => (
@@ -61,6 +76,7 @@ const build = () => {
     try {
         fs.ensureDirSync(`./dist/${ distId }/`);
         console.log(`Created ./dist/${ distId }/`);
+        assets();
         license();
         gitignore();
         html();

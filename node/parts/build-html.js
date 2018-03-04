@@ -1,6 +1,9 @@
 const fs = require('fs-extra');
+const datauri = require('datauri').sync;
 
 const {minify} = require('./minify-html');
+
+/* eslint newline-per-chained-call: off */
 
 const processCode = html => html
     .replace(
@@ -10,6 +13,23 @@ const processCode = html => html
             'g',
         ),
         (match, p1, p2) => `${ p1 }css${ p2 }`,
+    ).replace(
+        /(<img data-prod="build" src=")([^"]*?)("[^>]*?>)/g,
+        (match, p1, p2, p3) => p1 + datauri(`./src/${ p2 }`) + p3,
+    ).replace(
+        /<object data-prod="build" data="([^"]*?)"([^>]*?)><\/object>/g,
+        (match, filepath, attr) => fs
+            .readFileSync(`./src/${ filepath }`, 'utf-8')
+            .replace(
+                new RegExp(
+                    '(.|\\n)*?(?=<svg)<svg' +
+                    '(.|\\n)*?(?=viewBox=)(viewBox="[^"]*?")[^>]*?>' +
+                    '((.|\\n)*?)(?=<\\/svg>)(.|\\n)*',
+                    'g',
+                ),
+                (matchB, empty, empty2, viewBox, svg) => `<svg ${ attr } ${
+                    viewBox }>${ svg }</svg>`,
+            ),
     ).replace(
         /(<script data-prod="build" src="[./]*)scripts\/_out(\/[^>]*?>)/g,
         (match, p1, p2) => `${ p1 }js${ p2 }`,
