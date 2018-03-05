@@ -3,11 +3,11 @@
 <head>
 
 <meta charset="utf-8">
-<title>Test page</title>
+<title>Main Page</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link data-prod="build" rel="stylesheet" href="styles/_out/main.css">
+<link data-prod="build" rel="stylesheet" href="styles/_out/index.css">
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110450418-1"></script>
@@ -21,9 +21,83 @@
 </head>
 <body>
 
-<h1>Test page</h1>
+<div class="modal">
+    <canvas class="modal-cvs"></canvas>
+</div>
 
-<script data-prod="build" src="scripts/_out/main.js"></script>
+<nav>
+    <ul class="header">
+        <li class="logo">
+            <a href="#">
+                <object data-prod="build" data="assets/temp-logo.svg" class="svg noselect"></object>
+            </a>
+        </li>
+        <li class="menu-toggle">
+            <button>
+                <svg class="svg" viewBox="0 0 48 48">
+                    <use xlink:href="assets/svg-sprites/icons.svg#menu">
+                </svg>
+            </button>
+        </li>
+    </ul>
+    <ul class="menu">
+        <li><h1>Menu</h1></li>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+    </ul>
+</nav>
+
+<main class="index">
+
+<header>
+    <h1>Company Name</h1>
+    <h2>Slogan</h2>
+    <aside>
+        <ul>
+            <li>Phone</li>
+            <li>Adress</li>
+            <li>Time</li>
+            <li>Email</li>
+        </ul>
+    </aside>
+</header>
+
+<section class="products">
+    <header>
+        <h1>Products</h1>
+    </header>
+    <ul>
+        <li>
+            <div class="img">
+                <img data-prod="build" src="assets/pics-thumbs/temp-img-fhd.png" class="lazy" height="1080" width="1920" data-src="assets/pics/temp-img-fhd.png">
+            </div>
+            <h1>Product Name</h1>
+            <h2>Price</h2>
+            <button>Read More</button>
+        </li>
+        <li>
+            <div class="img">
+                <img data-prod="build" src="assets/pics-thumbs/temp-img-fhd.png" class="lazy" height="1080" width="1920" data-src="assets/pics/temp-img-fhd.png">
+            </div>
+            <h1>Product Name</h1>
+            <h2>Price</h2>
+            <button>Read More</button>
+        </li>
+        <li>
+            <div class="img">
+                <img data-prod="build" src="assets/pics-thumbs/temp-img-fhd.png" class="lazy" height="1080" width="1920" data-src="assets/pics/temp-img-fhd.png">
+            </div>
+            <h1>Product Name</h1>
+            <h2>Price</h2>
+            <button>Read More</button>
+        </li>
+    </ul>
+</section>
+
+</main>
+
+<script data-prod="build" src="scripts/_out/index.js"></script>
 
 </body>
 </html>
