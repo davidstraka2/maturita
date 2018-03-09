@@ -37,6 +37,11 @@ const css = () => globby('./src/styles/_out/**/*.css')
         buildCSS(files);
     }).catch(err => console.log(err));
 
+const favicon = () => fs.copy('./src/favicon.ico', `./dist/${ distId }/favicon.ico`)
+    .then(() => console.log(
+        `Copied ./src/favicon.ico to ./dist/${ distId }/favicon.ico`,
+    )).catch(err => console.log(err));
+
 const gitignore = () => makeGitignore(`./dist/${ distId }/.gitignore`);
 
 const html = () => globby('./src/**/*.html')
@@ -79,6 +84,7 @@ const build = () => {
         assets();
         license();
         gitignore();
+        favicon();
         html();
         css();
         js();
