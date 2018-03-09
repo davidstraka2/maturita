@@ -1,23 +1,143 @@
 main.index {
     width: 100%;
 
-    header {
-        display: none;
+    > header {
+        background: $clr-orange-normal;
+        display: flex;
+        flex-flow: column;
+
+        h1,
+        h2 {
+            @extend %text-normal;
+            color: $clr-gray-dark;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: $font-size-banner-big-mobile;
+            margin: 0.5em 1rem;
+
+            @media (min-width: 720px) {
+                font-size: $font-size-banner-big;
+            }
+        }
+
+        h2 {
+            font-size: $font-size-banner-mobile;
+            margin: 0 1rem 1em 1rem;
+
+            @media (min-width: 720px) {
+                font-size: $font-size-banner;
+            }
+        }
+
+        aside {
+            margin: 0 1rem 1em 1rem;
+
+            ul {
+                display: grid;
+                grid-template-columns: auto;
+
+                @media (min-width: 720px) {
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
+
+            li {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .svg {
+                display: inline-block;
+                fill: $clr-gray-normal;
+                height: $font-size-normal * 1.5;
+            }
+
+            div {
+                @extend %text-normal;
+                color: $clr-gray-normal;
+                display: inline-block;
+                font-size: $font-size-normal;
+                margin: 0 1em;
+                text-align: center;
+            }
+        }
     }
 
     .products {
+        background: $clr-orange-normal;
+
+        header {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+
+            h2 {
+                @extend %text-normal;
+                color: $clr-gray-dark;
+                font-size: $font-size-banner-mobile;
+                margin: 1em 1rem;
+
+                @media (min-width: 720px) {
+                    font-size: $font-size-banner;
+                }
+            }
+        }
+
         ul {
             display: grid;
             grid-column-gap: 1em;
-            grid-template-columns: repeat(auto-fit, minmax($index-products-min-col-width, 1fr));
+            grid-row-gap: 1em;
+            grid-template-columns: 100%;
+            padding: 1em;
 
-            @media (max-width: $index-products-min-col-width) {
-                grid-template-columns: 100%;
+            @media (min-width: #{$index-products-min-col-width + 1em * 2}) {
+                grid-template-columns: repeat(auto-fit, minmax($index-products-min-col-width, 1fr));
             }
         }
 
         li {
-            background: rgba(0, 0, 0, 0.5);
+            background: $clr-orange-light;
+            box-shadow: 0.25em 0.25em 0.25em 0 $clr-orange-dark;
+            order: 2;
+            padding: 1em;
+
+            .info {
+                display: flex;
+                flex-flow: row nowrap;
+                margin-top: 1em;
+            }
+
+            h3 {
+                @extend %text-normal;
+                color: $clr-gray-dark;
+                font-size: $font-size-normal;
+                margin: 0;
+            }
+
+            .svg {
+                display: inline-block;
+                fill: transparent;
+                height: $font-size-normal * $line-height-normal;
+                stroke: $clr-gray-normal;
+                stroke-width: 0.25em;
+            }
+
+            .fav-toggle {
+                margin-left: auto;
+
+                &.on .svg {
+                    fill: red;
+                    stroke: red;
+                }
+            }
+
+            &.fav {
+                order: 1;
+            }
         }
 
         img {

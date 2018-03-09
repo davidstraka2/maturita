@@ -1,8 +1,8 @@
 nav {
-    background: $nav-clr-bg;
+    background: $clr-orange-normal;
     display: flex;
     flex-flow: row wrap;
-    font: $nav-height $main-font;
+    font: $nav-height $font-fam-main;
     font-weight: bold;
     height: 1em;
     line-height: 1;
@@ -24,7 +24,7 @@ nav {
 
             @media (hover: hover) {
                 &:hover {
-                    background: $nav-clr-hl;
+                    background: $clr-orange-dark;
                 }
             }
         }
@@ -51,7 +51,7 @@ nav {
         .svg {
             box-sizing: border-box;
             display: block;
-            fill: $nav-clr-text;
+            fill: $clr-orange-very-light;
             height: 100%;
             max-width: 100%;
         }
@@ -66,7 +66,7 @@ nav {
     }
 
     .menu {
-        background: $nav-clr-bg;
+        background: $clr-orange-normal;
         border-radius: 10px 10px 0 0;
         bottom: 0;
         display: none;
@@ -88,7 +88,7 @@ nav {
         }
 
         a {
-            color: $nav-clr-text;
+            color: $clr-gray-dark;
             display: block;
             font-size: 0.75em;
             padding: 0.2em 0;
@@ -96,7 +96,7 @@ nav {
 
             @media (hover: hover) {
                 &:hover {
-                    background: $nav-clr-hl;
+                    background: $clr-orange-dark;
                 }
             }
         }
@@ -151,7 +151,7 @@ nav {
 
                 @media (hover: hover) {
                     &:hover {
-                        border-color: $nav-clr-text;
+                        border-color: $clr-gray-dark;
                     }
                 }
             }

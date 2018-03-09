@@ -55,43 +55,86 @@
     <h2>Slogan</h2>
     <aside>
         <ul>
-            <li>Phone</li>
-            <li>Adress</li>
-            <li>Time</li>
-            <li>Email</li>
+            <li>
+                <svg class="svg" viewBox="0 0 48 48" role="img">
+                    <title>Phone</title>
+                    <use xlink:href="assets/svg-sprites/icons.svg#phone">
+                </svg>
+                <div>Phone Number</div>
+            </li>
+            <li>
+                <svg class="svg" viewBox="0 0 48 48" role="img">
+                    <title>Adress</title>
+                    <use xlink:href="assets/svg-sprites/icons.svg#location">
+                </svg>
+                <div>Adress</div>
+            </li>
+            <li>
+                <svg class="svg" viewBox="0 0 48 48" role="img">
+                    <title>Opening Times</title>
+                    <use xlink:href="assets/svg-sprites/icons.svg#time">
+                </svg>
+                <div>Opening Times</div>
+            </li>
+            <li>
+                <svg class="svg" viewBox="0 0 48 48" role="img">
+                    <title>Email</title>
+                    <use xlink:href="assets/svg-sprites/icons.svg#email">
+                </svg>
+                <div>Email</div>
+            </li>
         </ul>
     </aside>
 </header>
 
 <section class="products">
     <header>
-        <h1>Products</h1>
+        <h2>Products</h2>
     </header>
     <ul>
-        <li>
+
+        <li class="product" data-product-id="a">
             <div class="img">
                 <img data-prod="build" src="assets/pics-thumbs/temp-img-fhd.png" class="lazy" height="1080" width="1920" data-src="assets/pics/temp-img-fhd.png">
             </div>
-            <h1>Product Name</h1>
-            <h2>Price</h2>
-            <button>Read More</button>
+            <div class="info">
+                <a href="#"><h3>Product Name</h3></a>
+                <button class="fav-toggle" data-product-id="a" title="Favorite">
+                    <svg class="svg noselect" viewBox="0 0 48 48" role="img">
+                        <use xlink:href="assets/svg-sprites/icons.svg#fav">
+                    </svg>
+                </button>
+            </div>
         </li>
-        <li>
+
+        <li class="product" data-product-id="b">
             <div class="img">
                 <img data-prod="build" src="assets/pics-thumbs/temp-img-fhd.png" class="lazy" height="1080" width="1920" data-src="assets/pics/temp-img-fhd.png">
             </div>
-            <h1>Product Name</h1>
-            <h2>Price</h2>
-            <button>Read More</button>
+            <div class="info">
+                <a href="#"><h3>Product Name</h3></a>
+                <button class="fav-toggle" data-product-id="b" title="Favorite">
+                    <svg class="svg noselect" viewBox="0 0 48 48" role="img">
+                        <use xlink:href="assets/svg-sprites/icons.svg#fav">
+                    </svg>
+                </button>
+            </div>
         </li>
-        <li>
+
+        <li class="product" data-product-id="c">
             <div class="img">
                 <img data-prod="build" src="assets/pics-thumbs/temp-img-fhd.png" class="lazy" height="1080" width="1920" data-src="assets/pics/temp-img-fhd.png">
             </div>
-            <h1>Product Name</h1>
-            <h2>Price</h2>
-            <button>Read More</button>
+            <div class="info">
+                <a href="#"><h3>Product Name</h3></a>
+                <button class="fav-toggle" data-product-id="c" title="Favorite">
+                    <svg class="svg noselect" viewBox="0 0 48 48" role="img">
+                        <use xlink:href="assets/svg-sprites/icons.svg#fav">
+                    </svg>
+                </button>
+            </div>
         </li>
+
     </ul>
 </section>
 

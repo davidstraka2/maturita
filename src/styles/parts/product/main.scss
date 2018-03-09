@@ -1,5 +1,66 @@
-main.product {
+main.product-page {
     width: 100%;
+
+    > header {
+        width: 100%;
+    }
+
+    .product-info {
+        display: grid;
+
+        > * {
+            grid-row: 1;
+            grid-column: 1;
+        }
+
+        img {
+            display: block;
+            height: auto;
+            width: 100%;
+        }
+
+        .label {
+            align-self: end;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            flex-flow: row nowrap;
+            padding: 0 1rem;
+            z-index: 5;
+
+            h2 {
+                @extend %text-normal;
+                color: $clr-gray-light;
+                font-size: $font-size-banner-mobile;
+            }
+
+            .svg {
+                display: inline-block;
+                fill: transparent;
+                height: $font-size-banner-mobile * $line-height-normal;
+                stroke: $clr-gray-light;
+                stroke-width: 0.25em;
+            }
+
+            @media (min-width: 720px) {
+                h2 {
+                    font-size: $font-size-banner;
+                }
+
+                .svg {
+                    height: $font-size-banner * $line-height-normal;
+                }
+            }
+
+            .fav-toggle {
+                margin-left: auto;
+
+                &.on .svg {
+                    fill: red;
+                    stroke: red;
+                }
+            }
+        }
+    }
 
     article,
     section {
@@ -13,31 +74,47 @@ main.product {
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
+        margin: 1em 0;
         max-width: 60em;
         width: 100%;
-    }
 
-    img {
-        display: block;
-        height: auto;
-        max-height: calc((100vh - #{$nav-height + $nav-shadow-height}) / 1.25);
-        max-width: 100%;
-        object-fit: contain;
-    }
+        img {
+            display: block;
+            height: auto;
+            max-height: calc((100vh - #{$nav-height + $nav-shadow-height}) / 1.25);
+            max-width: 100%;
+            object-fit: contain;
+        }
+    }    
 
     h1,
+    h2,
+    h3,
     p, {
-        font-family: $main-font;
+        font-family: $font-fam-main;
         max-width: 40em;
     }
 
     h1 {
-        font-size: 3em;
+        font-size: $font-size-article-title-mobile;
         margin: 0.5em 1rem;
+
+        @media (min-width: 720px) {
+            font-size: $font-size-article-title;
+        }
+    }
+
+    h2 {
+        font-size: $font-size-article-section-title-mobile;
+        margin: 0.5em 1rem;
+
+        @media (min-width: 720px) {
+            font-size: $font-size-article-section-title;
+        }
     }
 
     p {
-        color: $main-clr-text;
+        color: $clr-gray-normal;
         font-size: 1.25em;
         line-height: 1.5;
         margin: 1em 1rem;

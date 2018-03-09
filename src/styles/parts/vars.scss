@@ -1,9 +1,32 @@
-$main-font: 'Helvetica Neue', Roboto, Helvetica, Arial, sans-serif;
-$main-clr-text: #444;
+/* Text */
 
-$nav-clr-bg: #ffc107; // Material Amber 500
-$nav-clr-hl: #ffa000; // Material Amber 700
-$nav-clr-text: #fff8e1; // Material Amber 50
+$font-fam-main: 'Helvetica Neue', Roboto, Helvetica, Arial, sans-serif;
+
+$font-size-normal: 1.25em;
+$font-size-article-title: $font-size-normal * 3;
+$font-size-article-title-mobile: $font-size-normal * 1.75;
+$font-size-article-section-title: $font-size-normal * 2.25;
+$font-size-article-section-title-mobile: $font-size-normal * 1.6;
+$font-size-banner: $font-size-normal * 2.25;
+$font-size-banner-mobile: $font-size-normal * 1.6;
+$font-size-banner-big: $font-size-normal * 4;
+$font-size-banner-big-mobile: $font-size-normal * 2;
+
+$line-height-normal: 1.5;
+
+/* Colors */
+
+$clr-gray-light: #ddd;
+$clr-gray-normal: #444;
+$clr-gray-dark: #222;
+
+$clr-orange-very-light: #fff8e1; // Material Amber 50
+$clr-orange-light: #ffd54f; // Material Amber 100
+$clr-orange-normal: #ffc107; // Material Amber 500
+$clr-orange-dark: #ffa000; // Material Amber 700
+
+/* Layout */
+
 $nav-height: 4em;
 $nav-menu-width: 85vw;
 $nav-shadow-height: 0.1em;

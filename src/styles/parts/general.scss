@@ -4,6 +4,10 @@ a {
     text-decoration: none;
 }
 
+body {
+    line-height: 1;
+}
+
 button {
     -webkit-appearance: none;
     background: none;
@@ -11,7 +15,8 @@ button {
     outline: 0;
 }
 
-h1 {
+h1,
+h2 {
     margin: 0;
 }
 
@@ -22,6 +27,10 @@ ul {
 }
 
 /* Elements */
+
+:root {
+    font-size: 1em;
+}
 
 body {
     -webkit-font-smoothing: antialiased;
