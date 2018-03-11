@@ -22,9 +22,9 @@ const processCode = html => html
             .readFileSync(`./src/${ filepath }`, 'utf-8')
             .replace(
                 new RegExp(
-                    '(.|\\n)*?(?=<svg)<svg' +
-                    '(.|\\n)*?(?=viewBox=)(viewBox="[^"]*?")[^>]*?>' +
-                    '((.|\\n)*?)(?=<\\/svg>)(.|\\n)*',
+                    '(.|\\n|\\r)*?(?=<svg)<svg' +
+                    '(.|\\n|\\r)*?(?=viewBox=)(viewBox="[^"]*?")[^>]*?>' +
+                    '((.|\\n|\\r)*?)(?=<\\/svg>)(.|\\n|\\r)*',
                     'g',
                 ),
                 (matchB, empty, empty2, viewBox, svg) => `<svg ${ attr } ${
