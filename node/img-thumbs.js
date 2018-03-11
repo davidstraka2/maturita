@@ -17,10 +17,10 @@ const makeThumbs = (filePatt, replacePattA, replacePattB) => globby(filePatt)
             .read(file.inFile)
             .then(img => {
                 if (img.bitmap.width > img.bitmap.height)
-                    img.resize(jimp.AUTO, 32);
+                    img.resize(jimp.AUTO, 48);
                 else
-                    img.resize(32, jimp.AUTO);
-                img.quality(50);
+                    img.resize(48, jimp.AUTO);
+                img.quality(20);
                 img.write(file.outFile);
                 console.log(`Written thumbnail of ${ file.inFile } to ${ file
                     .outFile }`);
