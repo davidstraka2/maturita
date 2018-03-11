@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="141.39" height="36" fill="#000000" version="1.1" viewBox="0 0 70.693 18" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="141.39" height="36" fill="#000000" version="1.1" viewBox="0 0 70.693 18" xmlns="http://www.w3.org/2000/svg">
  <path d="m-14.653-3h24v24h-24z" fill="none"/>
- <g transform="translate(18,-3)">
-  <g id="g829">
-   <path d="m-0.5 3-0.16 0.03-5.34 2.07-6-2.1-5.64 1.9c-0.21 0.07-0.36 0.25-0.36 0.48v15.12c0 0.28 0.22 0.5 0.5 0.5l0.16-0.03 5.34-2.07 6 2.1 5.64-1.9c0.21-0.07 0.36-0.25 0.36-0.48v-15.12c0-0.28-0.22-0.5-0.5-0.5zm-5.5 16-6-2.11v-11.89l6 2.11z"/>
-   <text x="0.8671875" y="18.933594" fill="#000000" font-family="sans-serif" font-size="20px" letter-spacing="0px" stroke-width=".5" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="0.8671875" y="18.933594" font-family="Broadway" font-size="20px" stroke-width=".5" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal">itera</tspan></text>
-  </g>
- </g>
- <use transform="translate(18,-3)" width="100%" height="100%" xlink:href="#g829"/>
+ <path d="m17.5 0-0.16 0.03-5.34 2.07-6-2.1-5.64 1.9c-0.21 0.07-0.36 0.25-0.36 0.48v15.12c0 0.28 0.22 0.5 0.5 0.5l0.16-0.03 5.34-2.07 6 2.1 5.64-1.9c0.21-0.07 0.36-0.25 0.36-0.48v-15.12c0-0.28-0.22-0.5-0.5-0.5zm-5.5 16-6-2.11v-11.89l6 2.11z"/>
+ <text x="18.867188" y="15.933594" font-family="sans-serif" font-size="20px" letter-spacing="0px" stroke-width=".5" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="18.867188" y="15.933594" font-family="Broadway" font-size="20px" stroke-width=".5" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal">itera</tspan></text>
 </svg>
