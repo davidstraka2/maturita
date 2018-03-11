@@ -45,9 +45,9 @@ main.index {
 
             li {
                 align-items: center;
-                display: flex;
+                display: grid;
+                grid-template-columns: min-content auto;
                 justify-content: center;
-                width: 100%;
             }
 
             .svg {
