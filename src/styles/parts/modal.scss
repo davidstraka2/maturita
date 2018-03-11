@@ -2,6 +2,8 @@
     background: rgba(0, 0, 0, 0.85);
     bottom: 0;
     display: none;
+    flex-flow: column nowrap;
+    justify-content: center;
     position: fixed;
     width: 100vw;
 
@@ -12,9 +14,10 @@
 
 .modal-cvs {
     display: none;
-    height: 100%;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
     object-fit: contain;
-    width: 100%;
 
     &.on {
         display: block;
@@ -42,7 +45,7 @@ body.modal-small-on {
     overflow: hidden;
 
     .modal {
-        display: block;
+        display: flex;
     }
 
     main {
