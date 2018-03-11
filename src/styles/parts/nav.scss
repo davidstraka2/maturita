@@ -81,12 +81,6 @@ nav {
             display: block;
         }
 
-        h1 {
-            font-size: 1em;
-            margin: 0.1em 0 0.3em 0;
-            text-align: center;
-        }
-
         a {
             color: $clr-gray-dark;
             display: block;
@@ -134,10 +128,6 @@ nav {
 
             li {
                 height: 100%;
-
-                &:first-child {
-                    display: none;
-                }
             }
 
             a {
