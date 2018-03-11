@@ -7,6 +7,7 @@ node_modules/
 /node/optimize-jpeg/output/
 /src/assets/pics-thumbs/
 /src/assets/svg-sprites/
+/src/assets/templates/pics-thumbs/
 /src/scripts/_bundle/
 /src/scripts/_main-babel/
 /src/scripts/_out/
