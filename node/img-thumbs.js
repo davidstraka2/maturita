@@ -2,14 +2,14 @@ const fs = require('fs-extra');
 const globby = require('globby');
 const jimp = require('jimp');
 
-const makeThumbs = () => globby('./src/assets/pics/**/*')
+const makeThumbs = (filePatt, replacePattA, replacePattB) => globby(filePatt)
     .then(files => {
         const IOObjs = files.map(file => (
             {
                 inFile: file,
                 outFile: file.replace(
-                    'src/assets/pics/',
-                    'src/assets/pics-thumbs/',
+                    replacePattA,
+                    replacePattB,
                 ),
             }
         ));
@@ -30,7 +30,21 @@ const makeThumbs = () => globby('./src/assets/pics/**/*')
 const emptyAndThumbs = () => fs.emptyDir('./src/assets/pics-thumbs/')
     .then(() => {
         console.log('Emptied ./src/assets/pics-thumbs/');
-        makeThumbs();
+        makeThumbs('./src/assets/pics/**/*', 'src/assets/pics/',
+            'src/assets/pics-thumbs/');
     }).catch(err => console.log(err));
 
-emptyAndThumbs();
+const emptyAndThumbsTemplates = () => fs
+    .emptyDir('./src/assets/templates/pics-thumbs/')
+    .then(() => {
+        console.log('Emptied ./src/assets/templates/pics-thumbs/');
+        makeThumbs('./src/assets/templates/pics/**/*',
+            'src/assets/templates/pics/', 'src/assets/templates/pics-thumbs/');
+    }).catch(err => console.log(err));
+
+const go = () => {
+    emptyAndThumbs();
+    emptyAndThumbsTemplates();
+};
+
+go();
