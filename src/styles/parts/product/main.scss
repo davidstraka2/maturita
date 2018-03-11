@@ -39,7 +39,7 @@ main.product-page {
                 fill: transparent;
                 height: $font-size-banner-mobile * $line-height-normal;
                 stroke: $clr-gray-light;
-                stroke-width: 0.25em;
+                stroke-width: 10%;
             }
 
             @media (min-width: 720px) {
@@ -55,9 +55,23 @@ main.product-page {
             .fav-toggle {
                 margin-left: auto;
 
-                &.on .svg {
-                    fill: red;
-                    stroke: red;
+                @media (hover: hover) {
+                    &:hover .svg {
+                        stroke: red;
+                    }
+                }
+
+                &.on {
+                    @media (hover: hover) {
+                        &:hover .svg {
+                            stroke: $clr-gray-light;
+                        }
+                    }
+
+                    .svg {
+                        fill: red;
+                        stroke: red;
+                    }
                 }
             }
         }

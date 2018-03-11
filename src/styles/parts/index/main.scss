@@ -123,15 +123,29 @@ main.index {
                 fill: transparent;
                 height: $font-size-normal * $line-height-normal;
                 stroke: $clr-gray-normal;
-                stroke-width: 0.25em;
+                stroke-width: 10%;
             }
 
             .fav-toggle {
                 margin-left: auto;
 
-                &.on .svg {
-                    fill: red;
-                    stroke: red;
+                @media (hover: hover) {
+                    &:hover .svg {
+                        stroke: red;
+                    }
+                }
+
+                &.on {
+                    @media (hover: hover) {
+                        &:hover .svg {
+                            stroke: $clr-gray-light;
+                        }
+                    }
+
+                    .svg {
+                        fill: red;
+                        stroke: red;
+                    }
                 }
             }
 
