@@ -19,7 +19,7 @@ const setStorage = () => {
 };
 
 const toggleFav = e => {
-    const toggleEl = e.srcElement;
+    const toggleEl = e.target;
     const productId = toggleEl.getAttribute('data-product-id');
     const idx = favs.indexOf(productId);
     if (idx >= 0) {

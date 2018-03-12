@@ -32,7 +32,7 @@ const drawImg = img => {
 
 const modalToggleA = e => {
     if (modalState === 0) {
-        drawImg(e.srcElement);
+        drawImg(e.target);
         doc.modal.addEventListener('click', modalToggleA);
         addClasses();
         animation = doc.modalCvs.animate(
@@ -58,7 +58,7 @@ const modalToggleB = e => {
         removeClasses();
         modalState = 0;
     } else {
-        drawImg(e.srcElement);
+        drawImg(e.target);
         doc.modal.addEventListener('click', modalToggleB);
         addClasses();
         modalState = 1;
