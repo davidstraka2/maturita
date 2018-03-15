@@ -15,6 +15,13 @@ const assets = () => {
             `Copied ./src/assets/pics/ to ./dist/${ distId }/assets/pics/`,
         )).catch(err => console.log(err));
     fs.copy(
+        './src/assets/favicons/',
+        `./dist/${ distId }/assets/favicons/`,
+    ).then(console.log(
+        `Copied ./src/assets/favicons/ to ./dist/${
+            distId }/assets/favicons/`,
+    )).catch(err => console.log(err));
+    fs.copy(
         './src/assets/svg-sprites/',
         `./dist/${ distId }/assets/svg-sprites/`,
     ).then(console.log(
@@ -37,7 +44,8 @@ const css = () => globby('./src/styles/_out/**/*.css')
         buildCSS(files);
     }).catch(err => console.log(err));
 
-const favicon = () => fs.copy('./src/favicon.ico', `./dist/${ distId }/favicon.ico`)
+const favicon = () => fs
+    .copy('./src/favicon.ico', `./dist/${ distId }/favicon.ico`)
     .then(() => console.log(
         `Copied ./src/favicon.ico to ./dist/${ distId }/favicon.ico`,
     )).catch(err => console.log(err));
