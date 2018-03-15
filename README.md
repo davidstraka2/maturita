@@ -17,7 +17,7 @@ Cílem mé práce bylo vytvořit web pro prezentaci fiktivní cestovní agentury
 * Projekt by měl být nyní připraven k vývoji a první build by měl být připraven ve složce *dist*
 * Místní server můžete zapnout takto:
     * `npm run start`
-    * Nebo `npm run http-server CESTA`, kde CESTA je cestou ke složce nebo souboru, který bude kořenem serveru
+    * Nebo `npm run http-server -- CESTA`, kde CESTA je cestou ke složce nebo souboru, který bude kořenem serveru
 
 ## Licence
 
@@ -39,7 +39,7 @@ The objective of my work was to create a website for a fictional travel agency p
 * Project should now be ready for development and first build should be ready in the *dist* directory
 * To start local server:
     * `npm run start`
-    * Or `npm run http-server PATH` where PATH shall be the path to a directory or a file, which shall be the root of the server
+    * Or `npm run http-server -- PATH` where PATH shall be the path to a directory or a file, which shall be the root of the server
 
 ## License
 
