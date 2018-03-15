@@ -1,4 +1,4 @@
-* [Česky](#česky)
+* [Česky](#Česky)
 * [English](#english)
 
 # Česky
