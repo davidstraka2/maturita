@@ -9,6 +9,10 @@
 Tento projekt je součástí mé maturitní práce z informatiky.
 Cílem mé práce bylo vytvořit web pro prezentaci fiktivní cestovní agentury.
 
+## Prohlížeče
+
+Web byl otestován v aktuálních verzích prohlížečů Google Chrome, Opera, Mozilla Firefox a Microsoft Edge ve Windows a Google Chrome na Androidu.
+
 ## Vývoj a build
 
 * Ujistěte se, že máte nainstalováno Node.js
@@ -30,6 +34,10 @@ Tento projekt je licencován [MIT](LICENSE) licencí.
 
 This project is a part of my maturita work from ICT.
 The objective of my work was to create a website for a fictional travel agency presentation.
+
+## Browsers
+
+Website tested on current versions of Google Chrome, Opera, Mozilla Firefox, and Microsoft Edge on Windows and on Google Chrome on Android.
 
 ## Development and Building
 
