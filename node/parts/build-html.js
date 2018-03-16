@@ -36,6 +36,18 @@ const processCode = html => html
     ).replace(
         /(<[^>]*?)data-prod="build"([^>]*?>)/g,
         (match, p1, p2) => p1 + p2,
+    ).replace(
+        /(<(.|\\n|\\r)*?(?=src="\/)src=")(\/[^"]*?")/g,
+        (match, p1, empty, p2) => `${ p1 }/maturita${ p2 }`,
+    ).replace(
+        /(<(.|\\n|\\r)*?(?=data-src="\/)data-src=")(\/[^"]*?")/g,
+        (match, p1, empty, p2) => `${ p1 }/maturita${ p2 }`,
+    ).replace(
+        /(<(.|\\n|\\r)*?(?=href="\/)href=")(\/[^"]*?")/g,
+        (match, p1, empty, p2) => `${ p1 }/maturita${ p2 }`,
+    ).replace(
+        /(<(.|\\n|\\r)*?(?=data="\/)data=")(\/[^"]*?")/g,
+        (match, p1, empty, p2) => `${ p1 }/maturita${ p2 }`,
     );
 
 const processFiles = IOObjs => IOObjs.forEach(entry => {
