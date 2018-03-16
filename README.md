@@ -1,5 +1,6 @@
 * [Česky](#Česky)
 * [English](#english)
+* [*Zdroje (Sources)*](#zdroje-sources)
 
 # Česky
 
@@ -44,3 +45,29 @@ The objective of my work was to create a website for a fictional travel agency p
 ## License
 
 This project is licensed under the [MIT](LICENSE) license.
+
+# Zdroje (Sources)
+
+## Paříž
+
+* [Wikipedie: Paříž](https://cs.wikipedia.org/w/index.php?title=Pa%C5%99%C3%AD%C5%BE&oldid=15884563)
+* [Wikipedie: Eiffelova věž](https://cs.wikipedia.org/w/index.php?title=Eiffelova_v%C4%9B%C5%BE&oldid=15875442)
+* [Wikipedie: Vítězný oblouk](https://cs.wikipedia.org/w/index.php?title=V%C3%ADt%C4%9Bzn%C3%BD_oblouk_(Pa%C5%99%C3%AD%C5%BE)&oldid=15436472)
+* [Wikipedie: Louvre](https://cs.wikipedia.org/w/index.php?title=Louvre&oldid=15929689)
+* Obrázky od (pictures by): Benh LIEU SONG / Wikimedia Commons / [CC-BY-SA-3.0](https://creativecommons.org/licenses/by-sa/3.0/)
+
+## Řím
+
+* [Wikipedie: Řím](https://cs.wikipedia.org/w/index.php?title=%C5%98%C3%ADm&oldid=15776631)
+* [Wikipedie: Pantheon](https://cs.wikipedia.org/w/index.php?title=Pantheon&oldid=15793533)
+* [Wikipedie: Koloseum](https://cs.wikipedia.org/w/index.php?title=Koloseum&oldid=15788983)
+* [Wikipedie: Bazilika svatého Petra](https://cs.wikipedia.org/w/index.php?title=Bazilika_svat%C3%A9ho_Petra&oldid=15392693)
+* Obrázky od (pictures by): Dnalor 01, David Iliff, AngMoKio, Andreas Tille / Wikimedia Commons / [CC-BY-SA-3.0](https://creativecommons.org/licenses/by-sa/3.0/)
+
+## Londýn
+
+* [Wikipedie: Londýn](https://cs.wikipedia.org/w/index.php?title=Lond%C3%BDn&oldid=15881228)
+* [Wikipedie: Tower Bridge](https://cs.wikipedia.org/w/index.php?title=Tower_Bridge&oldid=15393642)
+* [Wikipedie: Westminsterský palác](https://cs.wikipedia.org/w/index.php?title=Westminstersk%C3%BD_pal%C3%A1c&oldid=15398630)
+* [Wikipedie: Westminsterské opatství](https://cs.wikipedia.org/w/index.php?title=Westminstersk%C3%A9_opatstv%C3%AD&oldid=15368631)
+* Obrázky od (pictures by): David Iliff, Fuzzypiggy / Wikimedia Commons / [CC-BY-SA-3.0](https://creativecommons.org/licenses/by-sa/3.0/)
