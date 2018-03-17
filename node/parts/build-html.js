@@ -14,7 +14,7 @@ const processCode = html => html
         ),
         (match, p1, p2) => `${ p1 }css${ p2 }`,
     ).replace(
-        /(<img data-prod="build" src=")([^"]*?)("[^>]*?>)/g,
+        /(<img data-prod="build"[^>]*?(?= src=") src=")([^"]*?)("[^>]*?>)/g,
         (match, p1, p2, p3) => p1 + datauri(`./src/${ p2 }`) + p3,
     ).replace(
         /<object data-prod="build" data="([^"]*?)"([^>]*?)><\/object>/g,
@@ -37,14 +37,20 @@ const processCode = html => html
         /(<[^>]*?)data-prod="build"([^>]*?>)/g,
         (match, p1, p2) => p1 + p2,
     ).replace(
-        /(<(.|\\n|\\r)*?(?=src="\/)src=")(\/[^"]*?")/g,
-        (match, p1, empty, p2) => `${ p1 }/maturita${ p2 }`,
+        /(<[^>]*?(?= src="\/) src="\/)([^"]*?")/g,
+        (match, p1, p2) => `${ p1 }maturita/${ p2 }`,
     ).replace(
-        /(<(.|\\n|\\r)*?(?=href="\/)href=")(\/[^"]*?")/g,
-        (match, p1, empty, p2) => `${ p1 }/maturita${ p2 }`,
+        /(<[^>]*?(?= data-src="\/) data-src="\/)([^"]*?")/g,
+        (match, p1, p2) => `${ p1 }maturita/${ p2 }`,
     ).replace(
-        /(<(.|\\n|\\r)*?(?=data="\/)data=")(\/[^"]*?")/g,
-        (match, p1, empty, p2) => `${ p1 }/maturita${ p2 }`,
+        /(<[^>]*?(?= href="\/) href="\/)([^"]*?")/g,
+        (match, p1, p2) => `${ p1 }maturita/${ p2 }`,
+    ).replace(
+        /(<[^>]*?(?= data="\/) data="\/)([^"]*?")/g,
+        (match, p1, p2) => `${ p1 }maturita/${ p2 }`,
+    ).replace(
+        /(<[^>]*?(?= xlink:href="\/) xlink:href="\/)([^"]*?")/g,
+        (match, p1, p2) => `${ p1 }maturita/${ p2 }`,
     );
 
 const processFiles = IOObjs => IOObjs.forEach(entry => {
