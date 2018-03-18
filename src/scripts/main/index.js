@@ -9,4 +9,4 @@ const docReady = () => {
     lazy(doc.lazyOnlyImgs);
 };
 
-window.addEventListener('load', docReady);
+document.addEventListener('DOMContentLoaded', docReady);

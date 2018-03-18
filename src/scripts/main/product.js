@@ -12,4 +12,4 @@ const docReady = () => {
     zoom(doc.zoomOnlyImgs);
 };
 
-window.addEventListener('load', docReady);
+document.addEventListener('DOMContentLoaded', docReady);
