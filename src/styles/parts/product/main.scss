@@ -1,4 +1,4 @@
-main.product-page {
+html.product-page main {
     width: 100%;
 
     > header {
@@ -57,7 +57,7 @@ main.product-page {
 
                 @media (hover: hover) {
                     &:hover .svg {
-                        stroke: red;
+                        stroke: $clr-red-normal;
                     }
                 }
 
@@ -69,8 +69,8 @@ main.product-page {
                     }
 
                     .svg {
-                        fill: red;
-                        stroke: red;
+                        fill: $clr-red-normal;
+                        stroke: $clr-red-normal;
                     }
                 }
             }
