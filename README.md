@@ -11,7 +11,8 @@ Cílem mé práce bylo vytvořit web pro prezentaci fiktivní cestovní agentury
 
 ## Prohlížeče
 
-Web byl otestován v aktuálních verzích prohlížečů Google Chrome, Opera, Mozilla Firefox a Microsoft Edge ve Windows a Google Chrome na Androidu.
+Web byl otestován v aktuálních verzích prohlížečů Google Chrome, Opera, Mozilla
+Firefox a Microsoft Edge ve Windows a Google Chrome na Androidu.
 
 ## Vývoj a build
 
@@ -19,10 +20,17 @@ Web byl otestován v aktuálních verzích prohlížečů Google Chrome, Opera, 
 * Stáhněte si zdroj projektu z GitHubu
 * `cd` do složky projektu
 * `npm install`
-* Projekt by měl být nyní připraven k vývoji a první build by měl být připraven ve složce *dist*
-* Místní server můžete zapnout takto:
-    * `npm run start`
-    * Nebo `npm run http-server -- CESTA`, kde CESTA je cestou ke složce nebo souboru, který bude kořenem serveru
+* Projekt by měl být nyní připraven k vývoji a první build by měl být připraven
+    ve složce *dist*
+
+## Důležité příkazy
+* Vytvoření produkční verze: `npm run build`
+* Zapnutí místního serveru: `npm run start` nebo `npm run http-server -- CESTA`,
+    kde CESTA je cestou ke složce nebo souboru, který bude kořenem serveru
+    (při použití produkční verze webu, musí být složka s indexem pojmenována
+    "maturita" a kořenem serveru bude složka jí obsahující - adresou webu pak
+    bude `127.0.0.1:8080/maturita`)
+* Sledování změn souborů: `npm run watch`
 
 ## Licence
 
@@ -32,12 +40,13 @@ Tento projekt je licencován [MIT](LICENSE) licencí.
 
 ## About
 
-This project is a part of my maturita work from ICT.
-The objective of my work was to create a website for a fictional travel agency presentation.
+This project is a part of my maturita work from ICT. The objective of my work
+was to create a website for a fictional travel agency presentation.
 
 ## Browsers
 
-Website tested on current versions of Google Chrome, Opera, Mozilla Firefox, and Microsoft Edge on Windows and on Google Chrome on Android.
+Website tested on current versions of Google Chrome, Opera, Mozilla Firefox, and
+Microsoft Edge on Windows and on Google Chrome on Android.
 
 ## Development and Building
 
@@ -45,10 +54,18 @@ Website tested on current versions of Google Chrome, Opera, Mozilla Firefox, and
 * Download project source from GitHub
 * `cd` to project directory
 * `npm install`
-* Project should now be ready for development and first build should be ready in the *dist* directory
-* To start local server:
-    * `npm run start`
-    * Or `npm run http-server -- PATH` where PATH shall be the path to a directory or a file, which shall be the root of the server
+* Project should now be ready for development and first build should be ready in
+    the *dist* directory
+
+## Important Commands
+* Build: `npm run build`
+* Start local server: `npm run start` or `npm run http-server -- PATH` where
+    PATH shall be the path to a directory or a file, which shall be the root of
+    the server (if production version of the website is to be used, the
+    directiory with index must be named "maturita" and the root of the server
+    shall be the directory containing it - website address shall be
+    `127.0.0.1:8080/maturita`)
+* Watch for file changes: `npm run watch`
 
 ## License
 
