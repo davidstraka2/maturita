@@ -1,3 +1,5 @@
+/* Tento modul má za úkol najít prvky dokumentu potřebné pro další moduly */
+
 const doc = {};
 
 const query = () => {

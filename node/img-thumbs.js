@@ -1,3 +1,5 @@
+/* Tento skript se stará o tvorbu náhledů obrázků */
+
 const fs = require('fs-extra');
 const globby = require('globby');
 const jimp = require('jimp');
@@ -16,6 +18,7 @@ const makeThumbs = (filePatt, replacePattA, replacePattB) => globby(filePatt)
         IOObjs.forEach(file => jimp
             .read(file.inFile)
             .then(img => {
+                // Zmenší velikost a sníží kvalitu obrázku
                 if (img.bitmap.width > img.bitmap.height)
                     img.resize(jimp.AUTO, 48);
                 else

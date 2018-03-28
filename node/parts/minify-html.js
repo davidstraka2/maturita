@@ -1,3 +1,5 @@
+/* Tento modul má na starost minifikaci HTML */
+
 const minifier = require('html-minifier').minify;
 
 const minifierOptions = {

@@ -1,7 +1,10 @@
+/* Tento skript se stará o tvorbu sprite sheets s vektorovými ikonkami */
+
 const fs = require('fs-extra');
 const svgstore = require('svgstore');
 
 const getSpritelist = () => {
+    // Přečte soubor spritelist.json se seznamem používaných ikonek
     try {
         let spritelist = fs.readFileSync('./src/spritelist.json', 'utf-8');
         spritelist = JSON.parse(spritelist);

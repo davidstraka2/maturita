@@ -1,3 +1,5 @@
+/* Tento skript se stará o bundling JavaScriptových modulů */
+
 const cjs = require('rollup-plugin-commonjs');
 const fs = require('fs-extra');
 const globby = require('globby');

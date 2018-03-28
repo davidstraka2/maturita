@@ -1,3 +1,5 @@
+/* Tento skript má na starost přidávání předpon vlastnostem CSS */
+
 const autoprefixer = require('autoprefixer');
 const fs = require('fs-extra');
 const globby = require('globby');

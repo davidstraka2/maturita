@@ -1,3 +1,5 @@
+/* Tento skript se stará o minifikaci JavaScriptu */
+
 const fs = require('fs-extra');
 const globby = require('globby');
 const uglify = require('uglify-es');

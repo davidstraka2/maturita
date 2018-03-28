@@ -1,3 +1,5 @@
+/* Tento skript má na starost importování knihoven CSS */
+
 const fs = require('fs-extra');
 const globby = require('globby');
 const postcss = require('postcss');

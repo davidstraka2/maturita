@@ -1,3 +1,5 @@
+/* Tento modul slouží k ovládání zobrazení seznamu odkazů menu */
+
 import doc from './doc';
 
 let menuOn = false;

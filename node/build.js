@@ -1,3 +1,5 @@
+/* Tento skript má na starost tvorbu produkční verze webu */
+
 const fs = require('fs-extra');
 const globby = require('globby');
 

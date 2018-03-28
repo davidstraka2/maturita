@@ -1,3 +1,5 @@
+/* Tento modul má na starost funkci přiblížení obrázků */
+
 import doc from './doc';
 
 let animation,
@@ -17,6 +19,7 @@ const removeClasses = () => {
 };
 
 const animEnd = () => {
+    // Po skončení animace resetuje stav
     if (modalState === 2) {
         doc.modal.removeEventListener('click', modalToggleA);
         removeClasses();
@@ -25,12 +28,14 @@ const animEnd = () => {
 };
 
 const drawImg = img => {
+    // Vykreslí zvolený obrázek pro přiblížení na canvas
     const size = [img.naturalWidth, img.naturalHeight];
     [doc.modalCvs.width, doc.modalCvs.height] = size;
     modalCtx.drawImage(img, 0, 0, size[0], size[1]);
 };
 
 const modalToggleA = e => {
+    // Přepínací funkce zobrazení s animací
     if (modalState === 0) {
         drawImg(e.target);
         doc.modal.addEventListener('click', modalToggleA);
@@ -53,6 +58,7 @@ const modalToggleA = e => {
 };
 
 const modalToggleB = e => {
+    // Přepínací funkce zobrazení bez animace
     if (modalState) {
         doc.modal.addEventListener('click', modalToggleB);
         removeClasses();
@@ -67,6 +73,7 @@ const modalToggleB = e => {
 
 const prepDoc = imgs => {
     modalCtx = doc.modalCvs.getContext('2d');
+    // Podporuje-li prohlížeč Web Animations API, je použita funkce s animací
     if (typeof Element.prototype.animate === 'undefined')
         imgs.forEach(img => img.addEventListener('click', modalToggleB));
     else

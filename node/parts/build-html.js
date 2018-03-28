@@ -1,3 +1,7 @@
+/* Tento modul má na starost úpravu HTML cest souborového systému, přímé
+    vkládání SVG kódu a přímé vkládání rastrových náhledů obrázků v podobě
+    schématu Data URI */
+
 const fs = require('fs-extra');
 const datauri = require('datauri').sync;
 
@@ -7,6 +11,7 @@ const {minify} = require('./minify-html');
 
 const processCode = html => html
     .replace(
+        // Upraví URL CSS
         new RegExp(
             '(<link data-prod="build" rel="stylesheet" href="[./]*)styles\\/' +
             '_out(\\/[^"]*?">)',
@@ -14,9 +19,11 @@ const processCode = html => html
         ),
         (match, p1, p2) => `${ p1 }css${ p2 }`,
     ).replace(
+        // Nahradí url obrázků Data URI
         /(<img data-prod="build"[^>]*?(?= src=") src=")([^"]*?)("[^>]*?>)/g,
         (match, p1, p2, p3) => p1 + datauri(`./src/${ p2 }`) + p3,
     ).replace(
+        // Nahradí prvek object vkládající externě SVG přímo vloženým SVG
         /<object data-prod="build" data="([^"]*?)"([^>]*?)><\/object>/g,
         (match, filepath, attr) => fs
             .readFileSync(`./src/${ filepath }`, 'utf-8')
@@ -31,12 +38,16 @@ const processCode = html => html
                     viewBox }>${ svg }</svg>`,
             ),
     ).replace(
+        // Upraví URL JavaScriptu
         /(<script data-prod="build" src="[./]*)scripts\/_out(\/[^>]*?>)/g,
         (match, p1, p2) => `${ p1 }js${ p2 }`,
     ).replace(
+        // Odstraní atribut data-prod
         /(<[^>]*?)data-prod="build"([^>]*?>)/g,
         (match, p1, p2) => p1 + p2,
-    ).replace(
+    )
+    // Upraví relativní URL aby zahrnovaly složku maturita
+    .replace(
         /(<[^>]*?(?= src="\/) src="\/)([^"]*?")/g,
         (match, p1, p2) => `${ p1 }maturita/${ p2 }`,
     ).replace(

@@ -1,3 +1,6 @@
+/* Tento modul má na starost tvorbu souboru .gitignore pro složku s produkční
+    verzí webu */
+
 const fs = require('fs-extra');
 
 const patts = [

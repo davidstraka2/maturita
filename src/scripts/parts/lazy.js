@@ -1,4 +1,7 @@
+/* Tento modul má na starost funkci progresivního lazy loadingu obrázků */
+
 const imgLoaded = (img, fullImg, callback) => {
+    // Zamění náhled obrázku za nově načtenou plnou verzi a zavolá callback
     img.classList.add('loaded');
     img.setAttribute('src', fullImg.getAttribute('src'));
     img.removeAttribute('data-src');
@@ -7,6 +10,7 @@ const imgLoaded = (img, fullImg, callback) => {
 };
 
 const loadImg = (img, callback) => {
+    // Začne načítat plnou verzi obrázku a rozostří mezitím jeho náhled
     let fullImg = document.createElement('img');
     fullImg.setAttribute('src', img.getAttribute('data-src'));
     fullImg.addEventListener('load', imgLoaded

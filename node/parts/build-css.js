@@ -1,3 +1,6 @@
+/* Tento modul má na starost odstranění extra řádku z minifikovaného
+    CSS kódu */
+
 const fs = require('fs-extra');
 
 const processCode = css => css.slice(0, css.lastIndexOf('\n'));

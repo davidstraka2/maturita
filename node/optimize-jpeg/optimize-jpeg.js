@@ -1,3 +1,5 @@
+/* Tento skript má na starost optimalizaci JPEG obrázků */
+
 const globby = require('globby');
 const guetzli = require('imagemin-guetzli');
 const imagemin = require('imagemin');
@@ -8,7 +10,7 @@ const aspectRatio = (a, b) => {
     return [a / gcd_, b / gcd_];
 };
 
-// Greatest common divisor
+// Najde nejvyšší společný dělitel
 const gcd = (numerator, denominator) => denominator ? gcd(denominator,
     numerator % denominator) : numerator;
 
